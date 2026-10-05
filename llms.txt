@@ -26,6 +26,7 @@ Haohan Wang gives invited talks on agentic AI for biomedical discovery, LLM jail
 - [LLM Security](https://haohanwang.ischool.illinois.edu/research/llm-security.html): jailbreaks (InfoFlood, cipher characters, self-jailbreaking, audio attacks) and prompt-injection defense
 - [Visibility in LLM-Based Search](https://haohanwang.ischool.illinois.edu/research/llm-search-visibility.html): how generative engines rank and recommend content; CORE method and ProductBench benchmark
 - [Gene Regulation & Disease Genetics](https://haohanwang.ischool.illinois.edu/research/gene-regulation-disease-genetics.html): spatial gene regulatory networks (SVGRN), Alzheimer's disease genetics (Het-PR), KMM
+- [Blog](https://haohanwang.ischool.illinois.edu/blog/): personal perspectives on AI research (structured vision/SVG, a unified view of trustworthy AI, evaluating prompt-injection defenses)
 - [Publications](https://haohanwang.ischool.illinois.edu/publications.html): publication list by year
 
 ## Elsewhere

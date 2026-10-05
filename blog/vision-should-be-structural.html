@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vision Should Be Structural | Haohan Wang</title>
+	<meta name="description" content="Why my group spent a few years turning images into SVG code that language models can read, and what I think still holds.">
+	<meta name="author" content="Haohan Wang">
+	<link rel="canonical" href="https://haohanwang.ischool.illinois.edu/blog/vision-should-be-structural.html">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="alternate" type="application/rss+xml" title="Haohan Wang's blog" href="https://haohanwang.ischool.illinois.edu/blog/feed.xml">
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="Haohan Wang">
+	<meta property="og:title" content="Vision Should Be Structural">
+	<meta property="og:description" content="Why my group spent a few years turning images into SVG code that language models can read, and what I think still holds.">
+	<meta property="og:url" content="https://haohanwang.ischool.illinois.edu/blog/vision-should-be-structural.html">
+	<meta property="og:image" content="https://haohanwang.ischool.illinois.edu/img/haohanwang.jpg">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@HaohanWang">
+	<meta name="twitter:creator" content="@HaohanWang">
+	<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "headline": "Vision Should Be Structural",
+ "description": "Why my group spent a few years turning images into SVG code that language models can read, and what I think still holds.",
+ "url": "https://haohanwang.ischool.illinois.edu/blog/vision-should-be-structural.html",
+ "mainEntityOfPage": "https://haohanwang.ischool.illinois.edu/blog/vision-should-be-structural.html",
+ "datePublished": "2026-10-05",
+ "dateModified": "2026-10-05",
+ "author": {
+  "@type": "Person",
+  "@id": "https://haohanwang.ischool.illinois.edu/#person",
+  "name": "Haohan Wang",
+  "url": "https://haohanwang.ischool.illinois.edu/"
+ },
+ "publisher": {
+  "@type": "Person",
+  "@id": "https://haohanwang.ischool.illinois.edu/#person",
+  "name": "Haohan Wang",
+  "url": "https://haohanwang.ischool.illinois.edu/"
+ },
+ "keywords": [
+  "computer vision",
+  "vector graphics",
+  "SVG",
+  "multimodal models",
+  "personal perspective"
+ ],
+ "wordCount": 1190,
+ "image": "https://haohanwang.ischool.illinois.edu/img/haohanwang.jpg",
+ "inLanguage": "en",
+ "isPartOf": {
+  "@type": "Blog",
+  "@id": "https://haohanwang.ischool.illinois.edu/blog/",
+  "name": "Haohan Wang's blog"
+ }
+}
+	</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/linearicons.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+	<header id="header">
+		<div class="container main-menu">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo"><a href="../index.html" aria-label="Home"></a></div>
+				<nav id="nav-menu-container" aria-label="Main">
+					<ul class="nav-menu">
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="../index.html#research">Research</a></li>
+						<li><a href="../index.html#news">News</a></li>
+						<li><a href="../index.html#talks">Talks</a></li>
+						<li><a href="../publications.html">Publications</a></li>
+						<li><a href="index.html" class="menu-active">Blog</a></li>
+						<li><a href="../index.html#speaking">Speaking</a></li>
+						<li><a href="../index.html#about">About</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main class="topic-page blog-page">
+		<section class="section-gap">
+			<div class="container">
+				<p class="breadcrumb-line"><a href="../index.html">Haohan Wang</a> › <a href="index.html">Blog</a></p>
+				<article class="blog-post">
+					<h1>Vision Should Be Structural</h1>
+					<p class="post-subtitle">Why my group spent a few years turning images into SVG code that language models can read, and what I think still holds.</p>
+					<p class="post-meta">Haohan Wang · <time datetime="2026-10-05">October 5, 2026</time> · computer vision · vector graphics · SVG · multimodal models · personal perspective</p>
+					<p>A few years ago I started to believe that vision models were missing something language models had. Text arrives with structure. Words form phrases, phrases form sentences, and a model can reason over those units. An image, as most vision models see it, arrives as a grid of pixels. Any structure in it has to be recovered from scratch.</p>
+<p>My guess was that this difference matters. If vision is to become as capable as language AI, it may need a representation with explicit parts and relations. We chose SVG (Scalable Vector Graphics) as one concrete candidate. This post explains that choice, what our papers showed, and where I now think the idea is weaker than I hoped.</p>
+<h2 id="why-svg">Why SVG</h2>
+<p>An SVG file describes an image as a list of shapes. A circle has a center, a radius, and a fill color. A polygon has a list of points. Because the format is XML text, a language model can read it directly. The image becomes something closer to a sentence: discrete objects with attributes, in an order you can inspect.</p>
+<p>That property suggested a simple test. Convert an image to SVG, give the SVG to a language model, and ask a question about the picture.</p>
+<p>Our first look at this was a collaboration with Yong Jae Lee&rsquo;s group, led by Mu Cai and Zeyi Huang. It was <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Cai_An_Investigation_on_LLMs_Visual_Understanding_Ability_using_SVG_for_WACV_2025_paper.pdf">later published at WACV 2025</a> (<a href="https://arxiv.org/abs/2306.06094">arXiv</a>). The study converted images to SVG and tested a text-only LLM on visual question answering, classification under distribution shift, few-shot learning, and generation. The model often did a reasonable job, which was encouraging.</p>
+<h2 id="making-the-svg-readable">Making the SVG readable</h2>
+<p>A practical obstacle remained. Common vectorization methods tend to produce SVGs that are overly complex and hard to interpret. That led to two papers on readable SVG. In <a href="https://arxiv.org/abs/2311.15543">Beyond Pixels</a>, Tong Zhang, Haoyang Liu, Peiyan Zhang, Yuxuan Cheng, and I built S²VG², which fine-tunes a vision-language model (BLIP) to write SVG code. A differentiable renderer (DiffVG) then refines the shape parameters against the original image. We tested it on simple synthetic images: colored circles, rectangles, and triangles on a 3×3 grid.</p>
+<p>On that data, the SVGs from S²VG² let GPT-4-32k answer questions about the image at almost the same accuracy as the ground-truth SVG (87.75% versus 87.73%). With SVGs from LIVE and DiffVG alone, accuracy was about 50% on yes/no questions, which is chance. In a small user study, people also found our SVGs easier to read. The lesson I took was concrete. The same image can be written as SVG in many ways, and only some of them carry structure a reader can use.</p>
+<p>A companion paper, <a href="https://openreview.net/forum?id=hDKLrK8AwP">Towards Readable Scalable Vector Graphic Generation</a> with Peiyan Zhang, tried to make readability something a model can optimize. It proposed desiderata for readable SVG code, metrics for them, and differentiable objectives that push a generator toward simpler, better-organized code.</p>
+<h2 id="a-harder-test-charts">A harder test: charts</h2>
+<p>Synthetic shapes are a toy. Charts are a real case where structure matters, because the answer often depends on an exact bar height or line position. In <a href="https://arxiv.org/abs/2504.09764">Socratic Chart</a>, Yuyang Ji and I first checked whether strong multimodal models read charts visually or through shortcuts. We removed the text labels from ChartQA charts, and separately stretched charts horizontally or vertically. The paper reports drops of up to 30% for models such as GPT-4o and Gemini 2.0 Pro.</p>
+<p>Socratic Chart converts the chart into SVG with a set of agents. Each agent extracts one kind of element, such as bars, lines, pie segments, text, or axes, and a critic agent reconciles their outputs. The SVG then goes to the model along with the image. On the label-removed charts, this reached 57.6% relaxed accuracy, against 40.8% for GPT-4V and 37.2% for Gemini 2.0. On standard ChartQA it ranked second overall, behind SIMPLOT. An ablation showed that removing the y-axis elements from the SVG cost about 7 points. That result fits the original intuition: the explicit numeric structure is what the model leans on.</p>
+<h2 id="what-has-happened-since">What has happened since</h2>
+<p>Other groups have pursued related ideas independently. <a href="https://arxiv.org/abs/2404.06479">VDLM</a> (Wang et al., TMLR 2025) converts SVG into a higher-level text description of shapes, positions, and measurements, and reports gains over GPT-4o on low-level perception tasks. The <a href="https://arxiv.org/abs/2407.06581">&ldquo;VLMs are blind&rdquo;</a> study found that leading vision-language models struggle with simple geometric questions, such as whether two circles overlap. Both are consistent with the view that pixel-based models do not reliably recover fine structure.</p>
+<p>Most of the SVG activity I can find has been on generation. Systems such as <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Rodriguez_StarVector_Generating_Scalable_Vector_Graphics_Code_from_Images_and_Text_CVPR_2025_paper.html">StarVector</a> (CVPR 2025), <a href="https://github.com/OmniSVG/OmniSVG">OmniSVG</a> (NeurIPS 2025), and <a href="https://arxiv.org/abs/2510.11341">InternSVG</a> train multimodal models to write SVG for icons, illustrations, and diagrams. Others use <a href="https://arxiv.org/abs/2505.20793">feedback from the rendered image</a> to train SVG generators with reinforcement learning. Some recent work also measures SVG structure directly, such as <a href="https://arxiv.org/abs/2604.08809">element-level structural metrics</a>, which is close to the readability question we cared about. Meanwhile, most widely used vision-language models still read images through pixel encoders.</p>
+<h2 id="what-i-would-keep-and-what-i-would-revise">What I would keep, and what I would revise</h2>
+<p>I still believe the core claim: a model reasons better over a scene when the scene is given as explicit parts with attributes. Our results support this in settings where the structure is clean, such as simple shapes and charts.</p>
+<p>I would revise how strongly I tied the idea to SVG. SVG was a convenient choice because LLMs already read code and the format is precise. But a natural photograph does not decompose neatly into circles and paths. Its SVG either loses detail or becomes too long to read. Our strongest evidence comes from synthetic images and charts, which are close to vector graphics already. I would now say the structure matters more than the format. SVG may be one useful case among several, and VDLM&rsquo;s intermediate description suggests the right level of abstraction may sit above raw SVG.</p>
+<p>I would also hold the pixel-versus-structure contrast more loosely. The two can be combined, and Socratic Chart already passes both the image and the SVG to the model.</p>
+<h2 id="closing">Closing</h2>
+<p>The question I started with still seems right to me: what is the unit a vision model should reason over? For charts, diagrams, and simple graphics, explicit structure helped in our experiments. For natural images, I think the question is still open.</p>
+<p><em>This is a personal perspective. The findings it describes are early, and comments and disagreements are welcome.</em></p>
+					<p class="post-note">This post shares my personal perspective; it does not represent the views of the University of Illinois.</p>
+				</article>
+				<p class="related-line"><a href="index.html">← All posts</a> · <a href="feed.xml">Subscribe via RSS</a></p>
+			</div>
+		</section>
+	</main>
+	<footer class="footer-area">
+		<div class="container text-center">
+			<p>© 2026 Haohan Wang · School of Information Sciences, University of Illinois Urbana-Champaign · <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · <a href="feed.xml">RSS</a></p>
+		</div>
+	</footer>
+	<script src="../js/site.js" defer></script>
+</body>
+</html>

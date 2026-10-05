@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>We Evaluate Prompt-Injection Defenses Too Simply | Haohan Wang</title>
+	<meta name="description" content="A low attack success rate can mean a model handled untrusted text correctly, or that it threw the text away, and the standard metric does not say which.">
+	<meta name="author" content="Haohan Wang">
+	<link rel="canonical" href="https://haohanwang.ischool.illinois.edu/blog/prompt-injection-evaluation.html">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="alternate" type="application/rss+xml" title="Haohan Wang's blog" href="https://haohanwang.ischool.illinois.edu/blog/feed.xml">
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="Haohan Wang">
+	<meta property="og:title" content="We Evaluate Prompt-Injection Defenses Too Simply">
+	<meta property="og:description" content="A low attack success rate can mean a model handled untrusted text correctly, or that it threw the text away, and the standard metric does not say which.">
+	<meta property="og:url" content="https://haohanwang.ischool.illinois.edu/blog/prompt-injection-evaluation.html">
+	<meta property="og:image" content="https://haohanwang.ischool.illinois.edu/img/haohanwang.jpg">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@HaohanWang">
+	<meta name="twitter:creator" content="@HaohanWang">
+	<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "headline": "We Evaluate Prompt-Injection Defenses Too Simply",
+ "description": "A low attack success rate can mean a model handled untrusted text correctly, or that it threw the text away, and the standard metric does not say which.",
+ "url": "https://haohanwang.ischool.illinois.edu/blog/prompt-injection-evaluation.html",
+ "mainEntityOfPage": "https://haohanwang.ischool.illinois.edu/blog/prompt-injection-evaluation.html",
+ "datePublished": "2026-10-05",
+ "dateModified": "2026-10-05",
+ "author": {
+  "@type": "Person",
+  "@id": "https://haohanwang.ischool.illinois.edu/#person",
+  "name": "Haohan Wang",
+  "url": "https://haohanwang.ischool.illinois.edu/"
+ },
+ "publisher": {
+  "@type": "Person",
+  "@id": "https://haohanwang.ischool.illinois.edu/#person",
+  "name": "Haohan Wang",
+  "url": "https://haohanwang.ischool.illinois.edu/"
+ },
+ "keywords": [
+  "LLM security",
+  "prompt injection",
+  "evaluation",
+  "personal perspective"
+ ],
+ "wordCount": 991,
+ "image": "https://haohanwang.ischool.illinois.edu/img/haohanwang.jpg",
+ "inLanguage": "en",
+ "isPartOf": {
+  "@type": "Blog",
+  "@id": "https://haohanwang.ischool.illinois.edu/blog/",
+  "name": "Haohan Wang's blog"
+ }
+}
+	</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/linearicons.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+	<header id="header">
+		<div class="container main-menu">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo"><a href="../index.html" aria-label="Home"></a></div>
+				<nav id="nav-menu-container" aria-label="Main">
+					<ul class="nav-menu">
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="../index.html#research">Research</a></li>
+						<li><a href="../index.html#news">News</a></li>
+						<li><a href="../index.html#talks">Talks</a></li>
+						<li><a href="../publications.html">Publications</a></li>
+						<li><a href="index.html" class="menu-active">Blog</a></li>
+						<li><a href="../index.html#speaking">Speaking</a></li>
+						<li><a href="../index.html#about">About</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main class="topic-page blog-page">
+		<section class="section-gap">
+			<div class="container">
+				<p class="breadcrumb-line"><a href="../index.html">Haohan Wang</a> › <a href="index.html">Blog</a></p>
+				<article class="blog-post">
+					<h1>We Evaluate Prompt-Injection Defenses Too Simply</h1>
+					<p class="post-subtitle">A low attack success rate can mean a model handled untrusted text correctly, or that it threw the text away, and the standard metric does not say which.</p>
+					<p class="post-meta">Haohan Wang · <time datetime="2026-10-05">October 5, 2026</time> · LLM security · prompt injection · evaluation · personal perspective</p>
+					<p>Most prompt-injection defenses are judged by one number: how often the attack succeeds. The number is easy to compute and easy to compare. I have come to think it is also easy to misread.</p>
+<p>This post is my opinion on why that matters. The technical details are in our ICML 2026 Spotlight paper, <a href="https://arxiv.org/abs/2606.30783">Security–Fidelity Tradeoffs: The Hidden Cost of Prompt Injection Defense</a>. Mitchell Hermon led it, with Rahul Gupta, Weitong Ruan, and Ekraam Sabir. The <a href="https://dream.ischool.illinois.edu/blogs/security_fidelity_tradeoff.html">DREAM Lab blog post</a> walks through the benchmark and results. Here I want to explain why I think the field should change how it reports defenses.</p>
+<h2 id="one-number-two-behaviors">One number, two behaviors</h2>
+<p>Consider an email assistant asked to translate a message. The message contains a sentence that reads like an instruction. A good assistant should translate that sentence along with the rest, because it is part of the email. It should not obey it.</p>
+<p>Now suppose a defended model leaves the sentence out of the translation. The attack did not succeed, so the attack success rate counts this as a win. But the user received an incomplete translation, and nothing warned them.</p>
+<p>That is the core problem. A model can avoid executing injected text in two ways. It can treat the text as data and process it as the task requires. Or it can suppress the text. Both lower the attack success rate by the same amount. Only the first is what we want when the task depends on that text.</p>
+<p>Instruction-like text is common in ordinary data. Emails contain requests. Documentation contains commands. Legal text quotes obligations. A defense that learns to drop such text will look secure on a benchmark that only checks execution.</p>
+<h2 id="what-we-found-when-we-measured-both">What we found when we measured both</h2>
+<p>To separate these behaviors, the paper builds a benchmark, SecFid, where executing, processing, and ignoring an injected span each produce a different output. That makes a second quantity measurable. The paper calls it fidelity: how often the model avoids suppressing content the task needs.</p>
+<p>Across 1,168 examples and 48 configurations, no model or defense scored high on both. The highest-fidelity model, undefended Llama 3.3 70B, reached 96.5% fidelity at 47.8% security. The most secure configurations, SecAlign on Llama 3.1 8B and Llama 3.3 70B, reached 99.3% security with 73.9% and 71.0% fidelity.</p>
+<p>The result I would point to first concerns defenses with similar security. On Llama 3.1 8B, SecAlign and DefensiveTokens both push execution close to zero. Among the cases the undefended model had executed, SecAlign turned 54% into faithful processing and suppressed 37%. DefensiveTokens did roughly the reverse, repairing 27% and suppressing 60%. An attack-success leaderboard would rank these two defenses as nearly equal. For a translation or editing product, they are very different.</p>
+<h2 id="why-i-think-this-matters-beyond-one-benchmark">Why I think this matters beyond one benchmark</h2>
+<p>Suppression is a silent failure. A model that drops a sentence still returns output that looks complete. The paper&rsquo;s impact statement makes the same point: fixed defenses can corrupt data without warning. Users and developers are unlikely to notice, so the cost can accumulate without anyone measuring it.</p>
+<p>The right behavior also depends on the deployment. The paper formalizes this with a simple cost model. A translation service loses a lot by dropping content and should process all but the riskiest spans. An agent that can move money loses a lot from a single hijack and should filter on weak evidence. The same string can deserve opposite treatment. So I do not think a defense has a single correct operating point. A defense should be described by where it sits and whether that position can be tuned.</p>
+<p>Research incentives point the same way. If papers report only attack success, one easy way to improve the number is to suppress more. A metric that rewards suppression will tend to produce defenses that suppress. Reporting fidelity alongside security changes what counts as progress. It also opens a path to better defenses. In the paper, a fidelity-aware preference-tuning step (DPO) on top of SecAlign raised processing on an unseen editing task from 43.2% to 80.6%, with execution still below 1%.</p>
+<h2 id="what-i-am-less-sure-about">What I am less sure about</h2>
+<p>The benchmark uses fixed probes. An adaptive attacker may behave differently, and we have not measured how adaptive attacks affect fidelity. The cost model reduces a defense&rsquo;s choices to two actions, process or filter. Real systems can do more, such as keeping the text while removing its authority. Fidelity for translation and editing is scored by embedding similarity to reference outputs, which is a reasonable proxy but still a proxy.</p>
+<p>There is also a fair counterargument. For many agentic deployments, security matters much more than fidelity, and a defense that drops suspicious text may be the right choice. I agree. My point is narrower. Even in those settings, the team deploying the defense should know what it costs. A security number alone does not tell them.</p>
+<h2 id="what-i-would-ask-for">What I would ask for</h2>
+<p>When a paper or a product reports a prompt-injection defense, I would like the security number to come with two companions. One is a measure of how much legitimate content the defense removes, on tasks where that content matters. The other is a statement of the task and deployment the numbers are meant for. Neither is hard to report. Together they would let a reader see the price of the security they are buying.</p>
+<p><em>This is a personal perspective. For the full method and results, see the <a href="https://arxiv.org/abs/2606.30783">paper</a> and the <a href="https://dream.ischool.illinois.edu/blogs/security_fidelity_tradeoff.html">lab blog post</a>.</em></p>
+					<p class="post-note">This post shares my personal perspective; it does not represent the views of the University of Illinois.</p>
+				</article>
+				<p class="related-line"><a href="index.html">← All posts</a> · <a href="feed.xml">Subscribe via RSS</a></p>
+			</div>
+		</section>
+	</main>
+	<footer class="footer-area">
+		<div class="container text-center">
+			<p>© 2026 Haohan Wang · School of Information Sciences, University of Illinois Urbana-Champaign · <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · <a href="feed.xml">RSS</a></p>
+		</div>
+	</footer>
+	<script src="../js/site.js" defer></script>
+</body>
+</html>

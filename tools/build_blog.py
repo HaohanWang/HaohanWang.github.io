@@ -120,7 +120,10 @@ def load_posts():
         meta["date"] = dt.date.fromisoformat(date)
         meta["slug"] = meta.get("slug") or re.sub(r"^\d+-", "", path.stem)
         meta["tags"] = meta.get("tags") or []
-        meta["body"] = markdown.markdown(m.group(2), extensions=["extra", "smarty", "toc"])
+        # The page template already shows the title and subtitle, so drop a leading
+        # "# Title" line and an italic subtitle line if the Markdown repeats them.
+        body_md = re.sub(r"^\s*#\s+[^\n]*\n+(\*[^\n]*\*\s*\n+)?", "", m.group(2), count=1)
+        meta["body"] = markdown.markdown(body_md, extensions=["extra", "smarty", "toc"])
         meta["words"] = len(re.findall(r"\w+", m.group(2)))
         posts.append(meta)
     return sorted(posts, key=lambda p: p["date"], reverse=True)

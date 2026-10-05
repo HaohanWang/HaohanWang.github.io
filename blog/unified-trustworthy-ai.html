@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>A Unified View of Trustworthy AI | Haohan Wang</title>
+	<meta name="description" content="Robustness, fairness, and interpretability are usually studied apart, but many of their methods answer the same question about data.">
+	<meta name="author" content="Haohan Wang">
+	<link rel="canonical" href="https://haohanwang.ischool.illinois.edu/blog/unified-trustworthy-ai.html">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="alternate" type="application/rss+xml" title="Haohan Wang's blog" href="https://haohanwang.ischool.illinois.edu/blog/feed.xml">
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="Haohan Wang">
+	<meta property="og:title" content="A Unified View of Trustworthy AI">
+	<meta property="og:description" content="Robustness, fairness, and interpretability are usually studied apart, but many of their methods answer the same question about data.">
+	<meta property="og:url" content="https://haohanwang.ischool.illinois.edu/blog/unified-trustworthy-ai.html">
+	<meta property="og:image" content="https://haohanwang.ischool.illinois.edu/img/haohanwang.jpg">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@HaohanWang">
+	<meta name="twitter:creator" content="@HaohanWang">
+	<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "headline": "A Unified View of Trustworthy AI",
+ "description": "Robustness, fairness, and interpretability are usually studied apart, but many of their methods answer the same question about data.",
+ "url": "https://haohanwang.ischool.illinois.edu/blog/unified-trustworthy-ai.html",
+ "mainEntityOfPage": "https://haohanwang.ischool.illinois.edu/blog/unified-trustworthy-ai.html",
+ "datePublished": "2026-10-05",
+ "dateModified": "2026-10-05",
+ "author": {
+  "@type": "Person",
+  "@id": "https://haohanwang.ischool.illinois.edu/#person",
+  "name": "Haohan Wang",
+  "url": "https://haohanwang.ischool.illinois.edu/"
+ },
+ "publisher": {
+  "@type": "Person",
+  "@id": "https://haohanwang.ischool.illinois.edu/#person",
+  "name": "Haohan Wang",
+  "url": "https://haohanwang.ischool.illinois.edu/"
+ },
+ "keywords": [
+  "trustworthy AI",
+  "causality",
+  "robustness",
+  "fairness",
+  "personal perspective"
+ ],
+ "wordCount": 1076,
+ "image": "https://haohanwang.ischool.illinois.edu/img/haohanwang.jpg",
+ "inLanguage": "en",
+ "isPartOf": {
+  "@type": "Blog",
+  "@id": "https://haohanwang.ischool.illinois.edu/blog/",
+  "name": "Haohan Wang's blog"
+ }
+}
+	</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/linearicons.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+	<header id="header">
+		<div class="container main-menu">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo"><a href="../index.html" aria-label="Home"></a></div>
+				<nav id="nav-menu-container" aria-label="Main">
+					<ul class="nav-menu">
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="../index.html#research">Research</a></li>
+						<li><a href="../index.html#news">News</a></li>
+						<li><a href="../index.html#talks">Talks</a></li>
+						<li><a href="../publications.html">Publications</a></li>
+						<li><a href="index.html" class="menu-active">Blog</a></li>
+						<li><a href="../index.html#speaking">Speaking</a></li>
+						<li><a href="../index.html#about">About</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main class="topic-page blog-page">
+		<section class="section-gap">
+			<div class="container">
+				<p class="breadcrumb-line"><a href="../index.html">Haohan Wang</a> › <a href="index.html">Blog</a></p>
+				<article class="blog-post">
+					<h1>A Unified View of Trustworthy AI</h1>
+					<p class="post-subtitle">Robustness, fairness, and interpretability are usually studied apart, but many of their methods answer the same question about data.</p>
+					<p class="post-meta">Haohan Wang · <time datetime="2026-10-05">October 5, 2026</time> · trustworthy AI · causality · robustness · fairness · personal perspective</p>
+					<p>Trustworthy machine learning is often taught as a list. There is robustness to distribution shift, and adversarial robustness. There is fairness, and there is interpretability. Each has its own venues, benchmarks, and vocabulary. A student who enters one of them can work for years without reading the others.</p>
+<p>I think this division hides something. When I read across these areas, many methods look like the same idea in different clothes. In 2023, Haoyang Liu, Maheep Chaudhary, and I wrote <a href="https://arxiv.org/abs/2307.16851">a survey</a> to make that idea explicit. This post is the short, opinionated version of why I care about it.</p>
+<h2 id="the-shared-root-is-in-the-data">The shared root is in the data</h2>
+<p>The view starts from a familiar example. Suppose we train a model to tell sea turtles from tortoises. Sea turtles are usually photographed in blue water, and tortoises on land. A model trained by standard empirical risk minimization will likely use the background, because it predicts the label well. A biologist would look at the feet or the shell.</p>
+<p>Nothing in the training objective tells the model which signal to prefer. Both are correlated with the label. The data contains a feature we want the model to use and a feature we do not, and plain ERM has no reason to prefer one over the other.</p>
+<p>Seen this way, several trustworthiness problems share a shape. In domain adaptation and generalization, the unwanted feature is something specific to one domain, such as a background or a texture. In fairness, it is often a sensitive attribute, such as gender or ethnicity in a hiring model. In adversarial robustness, it is a small perturbation that humans barely notice but the model responds to. Interpretability asks which features the model actually uses. The question underneath is the same in each case: which signals should the model rely on, and who decides?</p>
+<h2 id="the-methods-converge">The methods converge</h2>
+<p>The survey&rsquo;s main observation is that methods built independently in these areas converge to a few forms. We wrote them as &ldquo;master equations.&rdquo;</p>
+<p>One recurring form adds an adversarial term. The model is trained to predict the label while a second model tries to recover something it should ignore. In domain adaptation, that something is the domain. In fairness, the same construction appears with the sensitive attribute in place of the domain. Several early fairness methods reuse the domain-adversarial network with only that substitution.</p>
+<p>Adversarial training gives another form. It trains on worst-case perturbed inputs within some allowed distance. The same idea appears in domain generalization as data augmentation.</p>
+<p>Sample reweighting is a plug-in that can be added to either form. It shows up in robustness, and in fairness work on groups that are underrepresented in the data.</p>
+<p>Interpretability fits less cleanly. Perturbation-based and gradient-based explanation methods share a form with adversarial attacks, but our equation for them is less precise than the others. The survey says so directly.</p>
+<p>The survey then connects these forms to Pearl&rsquo;s ladder of causation. Reweighting samples resembles inverse probability weighting, a standard tool for estimating the effect of an intervention. Augmentation that changes an unwanted feature and keeps everything else fixed asks a counterfactual question: what would this input have looked like with a different background? Many methods that never mention causality appear to make causal assumptions anyway. This line of thinking builds on earlier work of mine. A <a href="https://proceedings.mlr.press/v180/wang22d.html">UAI 2022 paper</a>, for example, derived a generalization bound that leads to the same families of methods.</p>
+<h2 id="what-the-unified-view-buys">What the unified view buys</h2>
+<p>Some of the benefit is practical. If you know that a fairness method and a domain adaptation method share an equation, you can borrow progress from one area for the other. You also learn to recognize when a new paper reinvents an old method under a new name.</p>
+<p>The view also exposes assumptions. In the survey we argue that a trustworthiness property is not well defined until we say what the model should be robust against, fair with respect to, or interpretable to. Those choices come from stakeholders, and they enter the method as a regularizer or an augmentation. A unified view makes that dependence visible. It moves the conversation from &ldquo;which method is best&rdquo; toward &ldquo;what knowledge about the data did this method assume.&rdquo;</p>
+<p>The same lens extends to large pretrained models. Fine-tuning, parameter-efficient tuning, and prompting can all be written as variants of ERM. If that holds, the same master equations should apply to them, and the survey reviews early methods that do this.</p>
+<h2 id="where-the-view-is-limited">Where the view is limited</h2>
+<p>The survey covers robustness, adversarial robustness, fairness, and interpretability. It explicitly sets aside privacy and label noise. I would like the unified view to reach privacy, but I have not shown that it does, and the fit may be poor. Privacy concerns what a model reveals about individual training points. That is a different question from which features the model relies on.</p>
+<p>The view also takes a technical stance on fairness. It treats a fairness criterion as given and asks how to enforce it. Much of the hard work in fairness is deciding what &ldquo;fair&rdquo; should mean, and a shared equation says nothing about that.</p>
+<p>The causal reading has its own limits. In deep learning, the features we want and the features we do not are rarely observed or cleanly separable. The survey notes that unobserved variables and entangled features make direct causal inference difficult. A unifying language can describe methods without making them work better.</p>
+<p>Finally, a unification can flatten real differences. Adversarial robustness concerns an attacker who adapts, and domain shift usually does not. Writing both as one equation is useful for seeing the shared structure. It can also make a reader forget the threat model.</p>
+<h2 id="closing">Closing</h2>
+<p>I do not think the separate subfields should merge. Each has questions the others do not ask. But I think students and reviewers gain from seeing the shared root first. Many trustworthiness failures begin with a model that learned a correlation we did not want it to use. Naming that root makes it easier to see which part of a new problem is old.</p>
+<p><em>This is a personal perspective. The survey is at <a href="https://arxiv.org/abs/2307.16851">arXiv:2307.16851</a>, and I welcome disagreement.</em></p>
+					<p class="post-note">This post shares my personal perspective; it does not represent the views of the University of Illinois.</p>
+				</article>
+				<p class="related-line"><a href="index.html">← All posts</a> · <a href="feed.xml">Subscribe via RSS</a></p>
+			</div>
+		</section>
+	</main>
+	<footer class="footer-area">
+		<div class="container text-center">
+			<p>© 2026 Haohan Wang · School of Information Sciences, University of Illinois Urbana-Champaign · <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · <a href="feed.xml">RSS</a></p>
+		</div>
+	</footer>
+	<script src="../js/site.js" defer></script>
+</body>
+</html>

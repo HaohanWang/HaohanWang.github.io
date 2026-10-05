@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Haohan Wang's blog</title>
+  <link>https://haohanwang.ischool.illinois.edu/blog/</link>
+  <description>Personal perspectives on AI research, trustworthy AI, AI for science, and teaching.</description>
+  <language>en</language>
+  <item>
+    <title>Vision Should Be Structural</title>
+    <link>https://haohanwang.ischool.illinois.edu/blog/vision-should-be-structural.html</link>
+    <guid>https://haohanwang.ischool.illinois.edu/blog/vision-should-be-structural.html</guid>
+    <pubDate>Mon, 05 Oct 2026 12:00:00 -0500</pubDate>
+    <description>Why my group spent a few years turning images into SVG code that language models can read, and what I think still holds.</description>
+  </item>
+  <item>
+    <title>A Unified View of Trustworthy AI</title>
+    <link>https://haohanwang.ischool.illinois.edu/blog/unified-trustworthy-ai.html</link>
+    <guid>https://haohanwang.ischool.illinois.edu/blog/unified-trustworthy-ai.html</guid>
+    <pubDate>Mon, 05 Oct 2026 12:00:00 -0500</pubDate>
+    <description>Robustness, fairness, and interpretability are usually studied apart, but many of their methods answer the same question about data.</description>
+  </item>
+  <item>
+    <title>We Evaluate Prompt-Injection Defenses Too Simply</title>
+    <link>https://haohanwang.ischool.illinois.edu/blog/prompt-injection-evaluation.html</link>
+    <guid>https://haohanwang.ischool.illinois.edu/blog/prompt-injection-evaluation.html</guid>
+    <pubDate>Mon, 05 Oct 2026 12:00:00 -0500</pubDate>
+    <description>A low attack success rate can mean a model handled untrusted text correctly, or that it threw the text away, and the standard metric does not say which.</description>
+  </item>
+</channel>
+</rss>
