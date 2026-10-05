@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Visibility in LLM-Based Search: How Generative Engines Rank Content | Haohan Wang, UIUC</title>
+	<meta name="description" content="Haohan Wang&#x27;s group at UIUC studies how LLM-based search and generative engines rank and recommend content, introducing CORE and the ProductBench benchmark for controlling output rankings.">
+	<meta name="author" content="Haohan Wang">
+	<link rel="canonical" href="https://haohanwang.ischool.illinois.edu/research/llm-search-visibility.html">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="Haohan Wang">
+	<meta property="og:title" content="Visibility in LLM-Based Search – Haohan Wang, UIUC">
+	<meta property="og:description" content="Haohan Wang&#x27;s group at UIUC studies how LLM-based search and generative engines rank and recommend content, introducing CORE and the ProductBench benchmark for controlling output rankings.">
+	<meta property="og:url" content="https://haohanwang.ischool.illinois.edu/research/llm-search-visibility.html">
+	<meta property="og:image" content="https://haohanwang.ischool.illinois.edu/img/haohanwang.jpg">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@HaohanWang">
+	<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://haohanwang.ischool.illinois.edu/research/llm-search-visibility.html",
+   "url": "https://haohanwang.ischool.illinois.edu/research/llm-search-visibility.html",
+   "name": "Visibility in LLM-Based Search: How Generative Engines Rank Content | Haohan Wang, UIUC",
+   "description": "Haohan Wang's group at UIUC studies how LLM-based search and generative engines rank and recommend content, introducing CORE and the ProductBench benchmark for controlling output rankings.",
+   "inLanguage": "en",
+   "dateModified": "2026-10-05",
+   "author": {
+    "@type": "Person",
+    "@id": "https://haohanwang.ischool.illinois.edu/#person",
+    "name": "Haohan Wang",
+    "url": "https://haohanwang.ischool.illinois.edu/"
+   },
+   "about": {
+    "@id": "https://haohanwang.ischool.illinois.edu/#person"
+   },
+   "isPartOf": {
+    "@id": "https://haohanwang.ischool.illinois.edu/#website"
+   },
+   "hasPart": [
+    {
+     "@type": "ScholarlyArticle",
+     "name": "Controlling Output Rankings in Generative Engines for LLM-based Search (CORE)",
+     "url": "https://arxiv.org/abs/2602.03608",
+     "author": {
+      "@type": "Person",
+      "@id": "https://haohanwang.ischool.illinois.edu/#person",
+      "name": "Haohan Wang",
+      "url": "https://haohanwang.ischool.illinois.edu/"
+     },
+     "datePublished": "2026",
+     "publisher": "arXiv preprint"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is a generative engine?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A generative engine, or LLM-based search system, answers a query by synthesizing a direct answer or a short ranked set of recommendations with a large language model, instead of returning a list of links for the user to explore."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why does ranking in LLM-based search matter?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Generative engines' recommendations are strongly influenced by the initial retrieval order, which can disadvantage small businesses and independent creators by limiting their visibility. A product can be retrieved by the search engine yet still not appear prominently in the LLM's final recommendation."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can output rankings be changed without access to the model?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. The group's CORE method treats the LLM and its search interactions as a black box and optimizes only the content the search engine returns. Across GPT-4o, Gemini-2.5, Claude-4, and Grok-3, it promoted target products into the top 5 recommendations 91.4% of the time on average."
+     }
+    }
+   ]
+  }
+ ]
+}
+	</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/linearicons.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+	<header id="header">
+		<div class="container main-menu">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo"><a href="../index.html" aria-label="Home"></a></div>
+				<nav id="nav-menu-container" aria-label="Main">
+					<ul class="nav-menu">
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="../index.html#research" class="menu-active">Research</a></li>
+						<li><a href="../index.html#news">News</a></li>
+						<li><a href="../index.html#talks">Talks</a></li>
+						<li><a href="../publications.html">Publications</a></li>
+						<li><a href="../index.html#speaking">Speaking</a></li>
+						<li><a href="../index.html#recognition">Awards &amp; Service</a></li>
+						<li><a href="../index.html#about">About</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main class="topic-page">
+		<section class="section-gap">
+			<div class="container">
+				<p class="breadcrumb-line"><a href="../index.html">Haohan Wang</a> › <a href="../index.html#research">Research</a> › Visibility in LLM-Based Search</p>
+				<h1>Visibility in LLM-Based Search</h1>
+				<p class="lead-summary">As people shift from search results pages to AI assistants that recommend a few options directly, <strong>who gets recommended</strong> becomes a question of fairness and trust. Haohan Wang's group at the University of Illinois Urbana-Champaign studies how LLM-based search systems (generative engines) rank and recommend content, how those rankings can be influenced, and what that means for small businesses, independent creators, and the reliability of AI recommendations. This work is part of the group's broader research on trustworthy AI.</p>
+
+				<h2>Key questions</h2>
+				<h3>What is a generative engine?</h3>
+				<p>A generative engine, or LLM-based search system, answers a query by synthesizing a direct answer or a short ranked set of recommendations with a large language model, instead of returning a list of links for the user to explore.</p>
+				<h3>Why does ranking in LLM-based search matter?</h3>
+				<p>Generative engines' recommendations are strongly influenced by the initial retrieval order, which can disadvantage small businesses and independent creators by limiting their visibility. A product can be retrieved by the search engine yet still not appear prominently in the LLM's final recommendation.</p>
+				<h3>Can output rankings be changed without access to the model?</h3>
+				<p>Yes. The group's CORE method treats the LLM and its search interactions as a black box and optimizes only the content the search engine returns. Across GPT-4o, Gemini-2.5, Claude-4, and Grok-3, it promoted target products into the top 5 recommendations 91.4% of the time on average.</p>
+
+				<h2>Selected projects</h2>
+				<article class="project">
+					<h3>Controlling Output Rankings in Generative Engines for LLM-based Search (CORE)</h3>
+					<p class="project-meta">Jin H, Chen R, Zhang P, Luo Y, Zeng H, Luo M, Wang H · <i>arXiv preprint</i>, 2026</p>
+					<p>CORE appends strategically designed optimization content, of three types (string-based, reasoning-based, and review-based), to the content a search engine retrieves, in order to steer how the LLM ranks items. The paper also introduces ProductBench, a benchmark of 15 product categories with 200 products each, paired with top-10 recommendations from Amazon's search interface.</p>
+					<ul><li>Average Promotion Success Rate of 91.4% at top-5, 86.6% at top-3, and 80.3% at top-1 across 15 product categories</li><li>Evaluated on four LLMs with search: GPT-4o, Gemini-2.5, Claude-4, and Grok-3</li><li>Outperforms existing ranking-manipulation methods while preserving the fluency of the optimized content</li></ul>
+					<p class="project-links"><a href="https://arxiv.org/abs/2602.03608" target="_blank" rel="noopener">[Paper]</a> <a href="https://dream.ischool.illinois.edu/blogs/controlling_output_rankings_core.html" target="_blank" rel="noopener">[Project page]</a> <a href="https://dream.ischool.illinois.edu/blogs/core_explained.html" target="_blank" rel="noopener">[Explainer]</a></p>
+				</article>
+
+				<h2>Further reading from the DREAM Lab</h2>
+				<ul class="plain-list"><li><a href="https://dream.ischool.illinois.edu/blogs/controlling_output_rankings_core.html" target="_blank" rel="noopener">CORE: Controlling Output Rankings in Generative Engines (project page)</a></li><li><a href="https://dream.ischool.illinois.edu/blogs/core_explained.html" target="_blank" rel="noopener">CORE Explained: How to Improve Visibility in LLM-Based Search, Step by Step</a></li><li><a href="https://dream.ischool.illinois.edu/blogs/comparing_llm_search_visibility.html" target="_blank" rel="noopener">SEO vs GEO vs CORE: Techniques for Visibility in LLM-Based Search</a></li><li><a href="https://dream.ischool.illinois.edu/blogs/test_product_descriptions_ai_recommendations.html" target="_blank" rel="noopener">How to Test Whether Your Product Descriptions Influence AI Shopping Recommendations</a></li><li><a href="https://topcited.ai/" target="_blank" rel="noopener">TopCited AI, a platform built on this research</a></li></ul>
+
+				<h2>Invite a talk or collaborate</h2>
+				<p>Haohan Wang gives talks on how LLM-based search ranks and recommends content and on the trustworthiness of AI recommendations, and welcomes collaborations on measuring and improving fairness and reliability in generative engines. Contact Haohan Wang at haohanw at illinois.edu.</p>
+
+				<p class="related-line">Other research areas: <a href="agentic-ai-genomics.html">Agentic AI for Genomics</a> · <a href="llm-security.html">LLM Security</a> · <a href="gene-regulation-disease-genetics.html">Gene Regulation &amp; Disease Genetics</a> · <a href="../publications.html">All publications</a></p>
+			</div>
+		</section>
+	</main>
+	<footer class="footer-area">
+		<div class="container text-center">
+			<p>© 2026 Haohan Wang · School of Information Sciences, University of Illinois Urbana-Champaign · <a href="../index.html">Home</a> · <a href="../publications.html">Publications</a></p>
+		</div>
+	</footer>
+	<script src="../js/site.js" defer></script>
+</body>
+</html>

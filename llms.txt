@@ -15,7 +15,7 @@
 ## Research areas
 - Agentic AI: multi-agent LLM systems that automate complex data analysis, e.g. virtual bioinformaticians for gene expression analysis (GenoMAS, GenoTEX); efficient test-time scaling and multi-agent building blocks
 - Computational biology: gene regulatory network inference from spatial and single-cell transcriptomics; genetic basis of Alzheimer's disease and other complex traits
-- Trustworthy and secure AI: LLM jailbreak attacks and defenses (e.g. InfoFlood, cipher-character jailbreaks), prompt-injection defense, content-moderation guardrails, robust and generalizable machine learning
+- Trustworthy and secure AI: ranking and visibility in LLM-based search (CORE), LLM jailbreak attacks and defenses (e.g. InfoFlood, cipher-character jailbreaks), prompt-injection defense, content-moderation guardrails, robust and generalizable machine learning
 
 ## Speaking and collaboration
 Haohan Wang gives invited talks on agentic AI for biomedical discovery, LLM jailbreaks and prompt-injection defense, spatial gene regulation and disease genetics, and trustworthy machine learning. Past hosts include NIH/NLM, NIH NIDA, the NAIRR Pilot, Stanford, Tsinghua University, EMBL-EBI, the Broad Institute, Capital One, and KDD (tutorial). He welcomes collaborations in three areas: agentic AI (multi-agent architectures, efficient test-time scaling, AI scientists for discovery), trustworthy and secure AI (jailbreaks and red teaming, prompt-injection defense, ranking and visibility in LLM-based search), and computational biology (agentic analysis of thousands of diseases, spatial and single-cell gene regulation, shared genetic architecture of Alzheimer's disease, autism, and other complex diseases). Contact: haohanw@illinois.edu.
@@ -24,10 +24,12 @@ Haohan Wang gives invited talks on agentic AI for biomedical discovery, LLM jail
 - [Homepage](https://haohanwang.ischool.illinois.edu/): bio, research, news, invited talks, awards, teaching, service
 - [Agentic AI for Genomics](https://haohanwang.ischool.illinois.edu/research/agentic-ai-genomics.html): LLM agents as virtual bioinformaticians (GenoMAS, GenoTEX), key results, talks
 - [LLM Security](https://haohanwang.ischool.illinois.edu/research/llm-security.html): jailbreaks (InfoFlood, cipher characters, self-jailbreaking, audio attacks) and prompt-injection defense
+- [Visibility in LLM-Based Search](https://haohanwang.ischool.illinois.edu/research/llm-search-visibility.html): how generative engines rank and recommend content; CORE method and ProductBench benchmark
 - [Gene Regulation & Disease Genetics](https://haohanwang.ischool.illinois.edu/research/gene-regulation-disease-genetics.html): spatial gene regulatory networks (SVGRN), Alzheimer's disease genetics (Het-PR), KMM
 - [Publications](https://haohanwang.ischool.illinois.edu/publications.html): publication list by year
 
 ## Elsewhere
+- DREAM Lab: https://dream.ischool.illinois.edu/ (blog: https://dream.ischool.illinois.edu/blogs.html)
 - Google Scholar: https://scholar.google.com/citations?user=nZxJGeUAAAAJ
 - ORCID: https://orcid.org/0000-0002-1826-4069
 - UIUC iSchool profile: https://ischool.illinois.edu/people/haohan-wang
