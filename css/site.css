@@ -74,3 +74,13 @@ html { scroll-behavior: smooth; }
 .related-line { margin-top: 40px; }
 .single-services h3 a { color: inherit; }
 .topic-page > .section-gap { padding-top: 40px; }
+
+.blog-page .post-list { list-style: none; padding: 0; }
+.blog-page .post-list li { list-style: none; border-bottom: 1px solid #eee; padding: 18px 0; }
+.blog-page .post-list h2 { font-size: 22px; margin: 0 0 4px; }
+.blog-page .post-list h2 a { color: #222; }
+.post-subtitle { font-size: 18px !important; color: #666 !important; margin-bottom: 4px; }
+.post-meta { font-size: 13px !important; color: #999 !important; }
+.blog-post p, .blog-post li { font-size: 16px; line-height: 1.75; color: #444; }
+.blog-post blockquote { border-left: 3px solid #8490ff; padding-left: 16px; color: #555; }
+.post-note { font-style: italic; font-size: 13px !important; color: #999 !important; margin-top: 30px; }
