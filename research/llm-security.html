@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LLM Security: Jailbreaks, Prompt Injection, and Defenses | Haohan Wang, UIUC</title>
+	<meta name="description" content="Haohan Wang&#x27;s group at UIUC studies how large language models are jailbroken (InfoFlood, cipher characters, self-jailbreaking, audio attacks) and how to defend them, including the security–fidelity tradeoff in prompt-injection defense.">
+	<meta name="author" content="Haohan Wang">
+	<link rel="canonical" href="https://haohanwang.ischool.illinois.edu/research/llm-security.html">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="Haohan Wang">
+	<meta property="og:title" content="LLM Security: Jailbreaks and Prompt Injection – Haohan Wang, UIUC">
+	<meta property="og:description" content="Haohan Wang&#x27;s group at UIUC studies how large language models are jailbroken (InfoFlood, cipher characters, self-jailbreaking, audio attacks) and how to defend them, including the security–fidelity tradeoff in prompt-injection defense.">
+	<meta property="og:url" content="https://haohanwang.ischool.illinois.edu/research/llm-security.html">
+	<meta property="og:image" content="https://haohanwang.ischool.illinois.edu/img/haohanwang.jpg">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@HaohanWang">
+	<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://haohanwang.ischool.illinois.edu/research/llm-security.html",
+   "url": "https://haohanwang.ischool.illinois.edu/research/llm-security.html",
+   "name": "LLM Security: Jailbreaks, Prompt Injection, and Defenses | Haohan Wang, UIUC",
+   "description": "Haohan Wang's group at UIUC studies how large language models are jailbroken (InfoFlood, cipher characters, self-jailbreaking, audio attacks) and how to defend them, including the security–fidelity tradeoff in prompt-injection defense.",
+   "inLanguage": "en",
+   "dateModified": "2026-10-05",
+   "author": {
+    "@type": "Person",
+    "@id": "https://haohanwang.ischool.illinois.edu/#person",
+    "name": "Haohan Wang",
+    "url": "https://haohanwang.ischool.illinois.edu/"
+   },
+   "about": {
+    "@id": "https://haohanwang.ischool.illinois.edu/#person"
+   },
+   "isPartOf": {
+    "@id": "https://haohanwang.ischool.illinois.edu/#website"
+   },
+   "hasPart": [
+    {
+     "@type": "ScholarlyArticle",
+     "name": "Security–Fidelity Tradeoffs: The Hidden Cost of Prompt Injection Defense",
+     "url": "https://arxiv.org/abs/2606.30783",
+     "author": {
+      "@type": "Person",
+      "@id": "https://haohanwang.ischool.illinois.edu/#person",
+      "name": "Haohan Wang",
+      "url": "https://haohanwang.ischool.illinois.edu/"
+     },
+     "datePublished": "2026",
+     "publisher": "International Conference on Machine Learning (ICML)"
+    },
+    {
+     "@type": "ScholarlyArticle",
+     "name": "InfoFlood: Jailbreaking Large Language Models with Information Overload",
+     "url": "https://arxiv.org/abs/2506.12274",
+     "author": {
+      "@type": "Person",
+      "@id": "https://haohanwang.ischool.illinois.edu/#person",
+      "name": "Haohan Wang",
+      "url": "https://haohanwang.ischool.illinois.edu/"
+     },
+     "datePublished": "2025",
+     "publisher": "arXiv preprint"
+    },
+    {
+     "@type": "ScholarlyArticle",
+     "name": "Break Me If You Can: Self-Jailbreaking of Aligned LLMs via Lexical Insertion Prompting",
+     "url": "https://arxiv.org/abs/2601.02670",
+     "author": {
+      "@type": "Person",
+      "@id": "https://haohanwang.ischool.illinois.edu/#person",
+      "name": "Haohan Wang",
+      "url": "https://haohanwang.ischool.illinois.edu/"
+     },
+     "datePublished": "2026",
+     "publisher": "Conference on Language Modeling (COLM)"
+    },
+    {
+     "@type": "ScholarlyArticle",
+     "name": "Now You Hear Me: Audio Narrative Attacks Against Large Audio–Language Models",
+     "url": "https://doi.org/10.18653/v1/2026.eacl-long.278",
+     "author": {
+      "@type": "Person",
+      "@id": "https://haohanwang.ischool.illinois.edu/#person",
+      "name": "Haohan Wang",
+      "url": "https://haohanwang.ischool.illinois.edu/"
+     },
+     "datePublished": "2026",
+     "publisher": "European Chapter of the ACL (EACL)"
+    },
+    {
+     "@type": "ScholarlyArticle",
+     "name": "Robust Prompt Optimization for Defending Language Models Against Jailbreaking Attacks",
+     "url": "https://arxiv.org/abs/2401.17263",
+     "author": {
+      "@type": "Person",
+      "@id": "https://haohanwang.ischool.illinois.edu/#person",
+      "name": "Haohan Wang",
+      "url": "https://haohanwang.ischool.illinois.edu/"
+     },
+     "datePublished": "2024",
+     "publisher": "Advances in Neural Information Processing Systems (NeurIPS)"
+    },
+    {
+     "@type": "ScholarlyArticle",
+     "name": "Jailbreaking Large Language Models Against Moderation Guardrails via Cipher Characters",
+     "url": "https://arxiv.org/abs/2405.20413",
+     "author": {
+      "@type": "Person",
+      "@id": "https://haohanwang.ischool.illinois.edu/#person",
+      "name": "Haohan Wang",
+      "url": "https://haohanwang.ischool.illinois.edu/"
+     },
+     "datePublished": "2024",
+     "publisher": "Advances in Neural Information Processing Systems (NeurIPS)"
+    },
+    {
+     "@type": "ScholarlyArticle",
+     "name": "JailbreakZoo: Survey, Landscapes, and Horizons in Jailbreaking Large Language and Vision-Language Models",
+     "url": "https://arxiv.org/abs/2407.01599",
+     "author": {
+      "@type": "Person",
+      "@id": "https://haohanwang.ischool.illinois.edu/#person",
+      "name": "Haohan Wang",
+      "url": "https://haohanwang.ischool.illinois.edu/"
+     },
+     "datePublished": "2024",
+     "publisher": "arXiv preprint"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is an LLM jailbreak?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A jailbreak is an input crafted to make an aligned language model bypass its safety training and produce content it would normally refuse. Haohan Wang's group has shown several new classes of jailbreaks, including information overload (InfoFlood), cipher characters that evade moderation guardrails, self-jailbreaking where a model guides its own compromise, and narrative-style audio attacks on audio-language models."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why is defending against prompt injection hard?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The group's ICML 2026 paper identifies a security–fidelity tradeoff: defenses resist injected instructions largely by suppressing untrusted text, which breaks tasks that must preserve that text, such as translation and document editing. Across 1,168 examples and 48 configurations, no model or defense achieved both goals; the most secure defenses reached 99.3% security but only 71.0–73.9% fidelity."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do existing safety guardrails stop these attacks?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Often not. InfoFlood achieved up to 3 times higher jailbreak success than baseline attacks on GPT-4o, GPT-3.5-turbo, Gemini 2.0, and LLaMA 3.1, and common post-processing defenses including OpenAI's Moderation API, Perspective API, and SmoothLLM failed to mitigate it."
+     }
+    }
+   ]
+  }
+ ]
+}
+	</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/linearicons.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+	<header id="header">
+		<div class="container main-menu">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo"><a href="../index.html" aria-label="Home"></a></div>
+				<nav id="nav-menu-container" aria-label="Main">
+					<ul class="nav-menu">
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="../index.html#research" class="menu-active">Research</a></li>
+						<li><a href="../index.html#news">News</a></li>
+						<li><a href="../index.html#talks">Talks</a></li>
+						<li><a href="../publications.html">Publications</a></li>
+						<li><a href="../index.html#speaking">Speaking</a></li>
+						<li><a href="../index.html#recognition">Awards &amp; Service</a></li>
+						<li><a href="../index.html#about">About</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main class="topic-page">
+		<section class="section-gap">
+			<div class="container">
+				<p class="breadcrumb-line"><a href="../index.html">Haohan Wang</a> › <a href="../index.html#research">Research</a> › LLM Security: Jailbreaks and Prompt Injection</p>
+				<h1>LLM Security: Jailbreaks and Prompt Injection</h1>
+				<p class="lead-summary">Haohan Wang's group at the University of Illinois Urbana-Champaign studies the <strong>security of large language models</strong>: how aligned models can be jailbroken into harmful behavior, why current guardrails fail, and how to build defenses that hold up. The work spans text, vision, and audio models, and includes prompt-injection defenses for deployed LLM applications. The group's InfoFlood attack was covered by 404 Media, POLITICO, IT Brew, and the Illinois News Bureau.</p>
+
+				<h2>Key questions</h2>
+				<h3>What is an LLM jailbreak?</h3>
+				<p>A jailbreak is an input crafted to make an aligned language model bypass its safety training and produce content it would normally refuse. Haohan Wang's group has shown several new classes of jailbreaks, including information overload (InfoFlood), cipher characters that evade moderation guardrails, self-jailbreaking where a model guides its own compromise, and narrative-style audio attacks on audio-language models.</p>
+				<h3>Why is defending against prompt injection hard?</h3>
+				<p>The group's ICML 2026 paper identifies a security–fidelity tradeoff: defenses resist injected instructions largely by suppressing untrusted text, which breaks tasks that must preserve that text, such as translation and document editing. Across 1,168 examples and 48 configurations, no model or defense achieved both goals; the most secure defenses reached 99.3% security but only 71.0–73.9% fidelity.</p>
+				<h3>Do existing safety guardrails stop these attacks?</h3>
+				<p>Often not. InfoFlood achieved up to 3 times higher jailbreak success than baseline attacks on GPT-4o, GPT-3.5-turbo, Gemini 2.0, and LLaMA 3.1, and common post-processing defenses including OpenAI's Moderation API, Perspective API, and SmoothLLM failed to mitigate it.</p>
+
+				<h2>Selected projects</h2>
+				<article class="project">
+					<h3>Security–Fidelity Tradeoffs: The Hidden Cost of Prompt Injection Defense</h3>
+					<p class="project-meta">Hermon M, Gupta R, Ruan W, Sabir E, Wang H · <i>International Conference on Machine Learning (ICML)</i>, 2026 · <span class="pub-badge">Spotlight</span></p>
+					<p>Introduces SecFid, a benchmark in which executing an injection, processing it as data, and ignoring it produce distinguishable outputs, making fidelity measurable alongside security.</p>
+					<ul><li>No model or defense achieves both security and fidelity across 1,168 examples and 48 configurations</li><li>Highest-fidelity model: 96.5% fidelity at 47.8% security; most secure defenses: 99.3% security at 71.0–73.9% fidelity</li><li>A decision-theoretic analysis shows the right behavior depends on the deployment's relative cost of a hijack versus a dropped span</li></ul>
+					<p class="project-links"><a href="https://arxiv.org/abs/2606.30783" target="_blank" rel="noopener">[Paper]</a> <a href="https://openreview.net/forum?id=vTJmIhNvC3" target="_blank" rel="noopener">[OpenReview]</a></p>
+				</article>
+				<article class="project">
+					<h3>InfoFlood: Jailbreaking Large Language Models with Information Overload</h3>
+					<p class="project-meta">Yadav A, Jin H, Luo M, Zhuang J, Wang H · <i>arXiv preprint</i>, 2025</p>
+					<p>Identifies a new vulnerability: excessive linguistic complexity can disrupt built-in safety mechanisms without any added prefixes or suffixes. InfoFlood automatically rewrites malicious queries into information-overloaded ones and refines them when they fail.</p>
+					<ul><li>Up to 3× higher jailbreak success than baselines on GPT-4o, GPT-3.5-turbo, Gemini 2.0, and LLaMA 3.1</li><li>OpenAI Moderation API, Perspective API, and SmoothLLM fail to mitigate the attack</li></ul>
+					<p class="project-links"><a href="https://arxiv.org/abs/2506.12274" target="_blank" rel="noopener">[Paper]</a> <a href="https://www.404media.co/researchers-jailbreak-ai-by-flooding-it-with-bullshit-jargon/" target="_blank" rel="noopener">[404 Media coverage]</a> <a href="https://news.illinois.edu/illinois-information-sciences-researchers-develop-ai-safety-testing-methods/" target="_blank" rel="noopener">[Illinois News Bureau]</a></p>
+				</article>
+				<article class="project">
+					<h3>Break Me If You Can: Self-Jailbreaking of Aligned LLMs via Lexical Insertion Prompting</h3>
+					<p class="project-meta">Kulshreshtha D, Su H, Jin H, Hegde C, Wang H · <i>Conference on Language Modeling (COLM)</i>, 2026</p>
+					<p>Introduces self-jailbreaking, a threat model in which an aligned LLM guides its own compromise with no external attacker model, and SLIP, a black-box tree-search attack that implements it. Also proposes the Semantic Drift Monitor defense.</p>
+					<ul><li>90–100% attack success rate (average 94.7%) across most of eleven tested models, including GPT-5.1, Claude-Sonnet-4.5, Gemini-2.5-Pro, and DeepSeek-V3</li><li>About 7.9 LLM calls on average, 3–6× fewer than prior methods</li><li>Semantic Drift Monitor detects 76% of attacks at a 5% false-positive rate</li></ul>
+					<p class="project-links"><a href="https://arxiv.org/abs/2601.02670" target="_blank" rel="noopener">[Paper]</a> <a href="https://openreview.net/forum?id=y4PNft5oX1" target="_blank" rel="noopener">[OpenReview]</a></p>
+				</article>
+				<article class="project">
+					<h3>Now You Hear Me: Audio Narrative Attacks Against Large Audio–Language Models</h3>
+					<p class="project-meta">Yu Y, Jin H, Yu Y, Zhuang J, Wang H · <i>European Chapter of the ACL (EACL)</i>, 2026</p>
+					<p>Shows that embedding disallowed directives in a narrative-style synthetic speech stream circumvents safety mechanisms calibrated mainly for text.</p>
+					<ul><li>98.26% success rate against state-of-the-art models including Gemini 2.0 Flash, well above text-only baselines</li></ul>
+					<p class="project-links"><a href="https://doi.org/10.18653/v1/2026.eacl-long.278" target="_blank" rel="noopener">[Paper]</a> <a href="https://arxiv.org/abs/2601.23255" target="_blank" rel="noopener">[arXiv]</a></p>
+				</article>
+				<article class="project">
+					<h3>Robust Prompt Optimization for Defending Language Models Against Jailbreaking Attacks</h3>
+					<p class="project-meta">Zhou A, Li B, Wang H · <i>Advances in Neural Information Processing Systems (NeurIPS)</i>, 2024 · <span class="pub-badge">Spotlight</span></p>
+					<p>An optimization-based defense that incorporates the adversary directly into the defensive objective and learns a lightweight, transferable suffix that adapts to worst-case attacks.</p>
+					<ul><li>Reduces attack success rate on JailbreakBench to 6% on GPT-4 and 0% on Llama-2</li></ul>
+					<p class="project-links"><a href="https://arxiv.org/abs/2401.17263" target="_blank" rel="noopener">[Paper]</a> <a href="https://github.com/lapisrocks/rpo" target="_blank" rel="noopener">[Code]</a></p>
+				</article>
+				<article class="project">
+					<h3>Jailbreaking Large Language Models Against Moderation Guardrails via Cipher Characters</h3>
+					<p class="project-meta">Jin H, Zhou A, Menke JD, Wang H · <i>Advances in Neural Information Processing Systems (NeurIPS)</i>, 2024</p>
+					<p>Introduces JAMBench, 160 manually crafted instructions across four risk categories designed to trigger moderation guardrails, and JAM, an attack that uses cipher characters from a shadow guardrail model to bypass output filters.</p>
+					<ul><li>About 19.88× higher jailbreak success and about 1/6 the filtered-out rate of baselines across four LLMs</li></ul>
+					<p class="project-links"><a href="https://arxiv.org/abs/2405.20413" target="_blank" rel="noopener">[Paper]</a></p>
+				</article>
+				<article class="project">
+					<h3>JailbreakZoo: Survey, Landscapes, and Horizons in Jailbreaking Large Language and Vision-Language Models</h3>
+					<p class="project-meta">Jin H, Hu L, Li X, Zhang P, Chen C, Zhuang J, Wang H · <i>arXiv preprint</i>, 2024</p>
+					<p>A survey of jailbreaking and defenses for LLMs and vision-language models.</p>
+					<ul><li>Categorizes jailbreaks into seven distinct types and maps the corresponding defenses</li></ul>
+					<p class="project-links"><a href="https://arxiv.org/abs/2407.01599" target="_blank" rel="noopener">[Paper]</a> <a href="https://chonghan-chen.com/llm-jailbreak-zoo-survey/" target="_blank" rel="noopener">[Website]</a></p>
+				</article>
+
+				<h2>Talks on this topic</h2>
+				<ul class="plain-list"><li>Security is Task Dependent: The Security–Fidelity Tradeoff in Prompt Injection Defense — AICE, UIUC (Apr. 2026)</li><li>Practical Concerns of Prompt Injection in Deployed Language Models — Capital One (Dec. 2025)</li><li>Detecting and Neutralizing Prompt Injection via LLM Activation Monitoring — AICE Center, UIUC (Oct. 2025)</li><li>Guardian of Trust in Language Models: Automatic Jailbreak and Systematic Defense — UIC (July 2024); Virginia Tech (Apr. 2024); AI Talks (Apr. 2024); UIUC LLM Reading Group (Mar. 2024); VALSE (Jan. 2024)</li><li>Technical Advances of Jailbreaks — Protiviti (May 2024)</li><li>Tutorial on Trustworthy Machine Learning — ACM SIGKDD 2023</li></ul>
+
+				<h2>Research support</h2>
+				<p>This work is supported by the Amazon-Illinois Center on AI for Interactive Conversational Experiences (AICE) and the NAIRR Pilot.</p>
+
+				<h2>Invite a talk or collaborate</h2>
+				<p>Haohan Wang gives talks on LLM jailbreaks, prompt-injection defense, and AI safety evaluation for academic, industry, and policy audiences, and welcomes collaborations on securing deployed LLM and agent systems. Contact Haohan Wang at haohanw at illinois.edu.</p>
+
+				<p class="related-line">Other research areas: <a href="agentic-ai-genomics.html">Agentic AI for Genomics</a> · <a href="gene-regulation-disease-genetics.html">Gene Regulation & Disease Genetics</a> · <a href="../publications.html">All publications</a></p>
+			</div>
+		</section>
+	</main>
+	<footer class="footer-area">
+		<div class="container text-center">
+			<p>© 2026 Haohan Wang · School of Information Sciences, University of Illinois Urbana-Champaign · <a href="../index.html">Home</a> · <a href="../publications.html">Publications</a></p>
+		</div>
+	</footer>
+	<script src="../js/site.js" defer></script>
+</body>
+</html>
