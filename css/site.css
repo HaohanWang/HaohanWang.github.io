@@ -58,3 +58,4 @@ html { scroll-behavior: smooth; }
 .pub-list li { list-style: disc; margin-bottom: 12px; line-height: 1.6; }
 .pub-year { font-size: 22px; text-align: center; margin: 10px 0 18px; color: #222; }
 .pub-badge { color: #c0392b; font-weight: 500; }
+.research-note { margin-top: 40px; }
