@@ -1,0 +1,30 @@
+# Haohan Wang
+
+> Haohan Wang (汪浩瀚) is an Assistant Professor in the School of Information Sciences at the University of Illinois Urbana-Champaign (UIUC), where he leads the DREAM Lab. His research covers agentic AI for scientific discovery, computational biology, and trustworthy and secure AI (LLM jailbreaks, prompt injection, robustness).
+
+## Key facts
+- Position: Assistant Professor, School of Information Sciences, University of Illinois Urbana-Champaign (since 2022)
+- Affiliated faculty: Siebel School of Computing and Data Science; Carl R. Woese Institute for Genomic Biology; Beckman Institute for Advanced Science and Technology; Interdisciplinary Health Sciences Institute; National Center for Supercomputing Applications
+- Lab: DREAM Lab, https://dream.ischool.illinois.edu/
+- Education: Ph.D. (2021) and M.S. (2015), Language Technologies Institute, Carnegie Mellon University (Ph.D. advisor: Eric P. Xing); B.S. Computer Science, Beijing University of Posts and Telecommunications (2012)
+- Previously: Postdoctoral Researcher, Machine Learning Department, Carnegie Mellon University (2022)
+- Selected recognition: Next Generation in Biomedicine, Broad Institute of MIT and Harvard (2019); Rising Star in AI+X, Baidu Research (2022); Best Paper Honorable Mention, WSDM 2023; Outstanding Paper Award, FL@FM Workshop at NeurIPS 2024; Student Paper Award, IEEE BIBM 2017
+- Service: General Chair, Midwest Machine Learning Symposium 2026; Area Chair for NeurIPS, ICML, and ACL; Editor for Scientific Reports and TMLR
+- Contact: haohanw@illinois.edu
+
+## Research areas
+- Agentic AI: multi-agent LLM systems that automate complex data analysis, e.g. virtual bioinformaticians for gene expression analysis (GenoMAS, GenoTEX); efficient test-time scaling and multi-agent building blocks
+- Computational biology: gene regulatory network inference from spatial and single-cell transcriptomics; genetic basis of Alzheimer's disease and other complex traits
+- Trustworthy and secure AI: LLM jailbreak attacks and defenses (e.g. InfoFlood, cipher-character jailbreaks), prompt-injection defense, content-moderation guardrails, robust and generalizable machine learning
+
+## Pages
+- [Homepage](https://haohanwang.ischool.illinois.edu/): bio, research, news, invited talks, awards, teaching, service
+- [Publications](https://haohanwang.ischool.illinois.edu/publications.html): publication list by year
+
+## Elsewhere
+- Google Scholar: https://scholar.google.com/citations?user=nZxJGeUAAAAJ
+- ORCID: https://orcid.org/0000-0002-1826-4069
+- UIUC iSchool profile: https://ischool.illinois.edu/people/haohan-wang
+- GitHub: https://github.com/HaohanWang
+- X/Twitter: https://twitter.com/HaohanWang
+- LinkedIn: https://www.linkedin.com/in/haohanwang/

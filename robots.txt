@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://haohanwang.ischool.illinois.edu/sitemap.xml

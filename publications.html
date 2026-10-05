@@ -1,154 +1,70 @@
-
-	<!DOCTYPE html>
-	<html lang="zxx" class="no-js">
-	
-	<script language="javascript" type="text/javascript">
-
- var state = 'none';
- function showhide(layer_ref) {
- if (state == 'block') {
- state = 'none';
- }
- else {
- state = 'block';
- }
-
- if (document.all) { //IS IE 4 or 5 (or 6 beta)
- eval( "document.all." + layer_ref + ".style.display = state");
- }
- if (document.layers) { //IS NETSCAPE 4 or below
- document.layers[layer_ref].display = state;
- }
- if (document.getElementById &&!document.all) {
- hza = document.getElementById(layer_ref);
- hza.style.display = state;
- }
- }
-
- function show(layer_ref) {
- state = 'block';
-
- if (document.all) { //IS IE 4 or 5 (or 6 beta)
- eval( "document.all." + layer_ref + ".style.display = state");
- }
- if (document.layers) { //IS NETSCAPE 4 or below
- document.layers[layer_ref].display = state;
- }
- if (document.getElementById &&!document.all) {
- hza = document.getElementById(layer_ref);
- hza.style.display = state;
- }
- }
-
- function hide(layer_ref) {
- state = 'none';
-
- if (document.all) { //IS IE 4 or 5 (or 6 beta)
- eval( "document.all." + layer_ref + ".style.display = state");
- }
- if (document.layers) { //IS NETSCAPE 4 or below
- document.layers[layer_ref].display = state;
- }
- if (document.getElementById &&!document.all) {
- hza = document.getElementById(layer_ref);
- hza.style.display = state;
- }
- }
-
-
- function sDiv(pass) {
- var divs = document.getElementsByTagName('div');
- for(i=0;i<divs.length;i++)
- {
- 	if(divs[i].id.match('tag'))
- 	{
-
- 	if(divs[i].id.match(pass))
- 	{
- 		show(divs[i].id);
- 	}
- 	if(!divs[i].id.match(pass))
- 	{
- 		hide(divs[i].id);
- 	}
-
-
- 	}
- }
-
- }
-
-</script>
-	
-	<head>
-		<!-- Mobile Specific Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
-		<link rel="shortcut icon" href="img/fav.png">
-		<!-- Author Meta -->
-		<meta name="author" content="colorlib">
-		<!-- Meta Description -->
-		<meta name="description" content="Haohan Wang, Trustworthy Machine Learning, UIUC, CMU, Computational Biology, Eric Xing">
-		<!-- Meta Keyword -->
-		<meta name="keywords" content="Haohan Wang, Trustworthy Machine Learning, UIUC, CMU, Computational Biology, Eric Xing">
-		<!-- meta character set -->
-		<meta charset="UTF-8">
-		<!-- Site Title -->
-		<title>Haohan Wang's Publication</title>
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
-
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
-			<!--
-			CSS
-			============================================= -->
-			<link rel="stylesheet" href="css/linearicons.css">
-			<link rel="stylesheet" href="css/font-awesome.min.css">
-			<link rel="stylesheet" href="css/bootstrap.css">
-			<link rel="stylesheet" href="css/magnific-popup.css">
-			<link rel="stylesheet" href="css/jquery-ui.css">				
-			<link rel="stylesheet" href="css/nice-select.css">							
-			<link rel="stylesheet" href="css/animate.min.css">
-			<link rel="stylesheet" href="css/owl.carousel.css">				
-			<link rel="stylesheet" href="css/main.css">
-		</head>
-		<body>	
-		  <header id="header">
-		    <div class="container main-menu">
-		    	<div class="row align-items-center justify-content-between d-flex">
-			      <div id="logo">
-			        <a href="index.html"></a>
-			      </div>
-			      <nav id="nav-menu-container">
-			        <ul class="nav-menu">
-			          <li><a href="index.html">Home</a></li>
-			          <li><a href="index.html#research">Research</a></li>
-			          <li><a href="index.html#news">Recent Updates</a></li>
-			          <li><a href="index.html#open">Collaborations</a></li>
-			          <li><a href="index.html#talks">Talks</a></li>
-			          <li><a href="publications.html">Publications</a></li>
-			          <li><a href="index.html#about">About</a></li>
-			        </ul>
-			      </nav><!-- #nav-menu-container -->		    		
-		    	</div>
-		    </div>
-		  </header><!-- #header -->
-
-					
-		<nav id="fh5co-main-nav" role="navigation">
-			<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle active"><i></i></a>
-			<div class="js-fullheight fh5co-table">
-				<div class="fh5co-table-cell js-fullheight">
-					<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="publications.html">Publications</a></li>
-					<li><a href="index.html">Contact</a></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Publications | Haohan Wang, UIUC – Agentic AI, Computational Biology, LLM Security</title>
+	<meta name="description" content="Full publication list of Haohan Wang (University of Illinois Urbana-Champaign): papers at NeurIPS, ICML, ICLR, ACL, CVPR and in Bioinformatics and other journals on agentic AI, computational biology, and trustworthy AI.">
+	<meta name="author" content="Haohan Wang">
+	<link rel="canonical" href="https://haohanwang.ischool.illinois.edu/publications.html">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Haohan Wang">
+	<meta property="og:title" content="Publications – Haohan Wang, UIUC">
+	<meta property="og:description" content="Papers on agentic AI, computational biology, and trustworthy AI by Haohan Wang and the DREAM Lab.">
+	<meta property="og:url" content="https://haohanwang.ischool.illinois.edu/publications.html">
+	<meta property="og:image" content="https://haohanwang.ischool.illinois.edu/img/haohanwang.jpg">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@HaohanWang">
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "CollectionPage",
+	  "name": "Publications of Haohan Wang",
+	  "url": "https://haohanwang.ischool.illinois.edu/publications.html",
+	  "about": { "@id": "https://haohanwang.ischool.illinois.edu/#person" },
+	  "author": { "@type": "Person", "@id": "https://haohanwang.ischool.illinois.edu/#person", "name": "Haohan Wang", "url": "https://haohanwang.ischool.illinois.edu/" },
+	  "isPartOf": { "@id": "https://haohanwang.ischool.illinois.edu/#website" }
+	}
+	</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/linearicons.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/site.css">
+	<script>
+	// Topic filter: each <li> id encodes its topics (tagML, tagCB, tagStat); "tag" shows all.
+	function filterPubs(tag) {
+		document.querySelectorAll('.pub-list li[id]').forEach(function (li) {
+			li.style.display = li.id.indexOf(tag) !== -1 ? '' : 'none';
+		});
+		return false;
+	}
+	</script>
+</head>
+<body>
+	<header id="header">
+		<div class="container main-menu">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo"><a href="index.html" aria-label="Home"></a></div>
+				<nav id="nav-menu-container" aria-label="Main">
+					<ul class="nav-menu">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="index.html#research">Research</a></li>
+						<li><a href="index.html#news">News</a></li>
+						<li><a href="index.html#talks">Talks</a></li>
+						<li><a href="publications.html" class="menu-active">Publications</a></li>
+						<li><a href="index.html#recognition">Awards &amp; Service</a></li>
+						<li><a href="index.html#about">About</a></li>
 					</ul>
-				</div>
+				</nav>
 			</div>
-		</nav>
-		
-		
-		<div id="fh5co-page">
+		</div>
+	</header>
+	<main>
+<div id="fh5co-page">
 			<div id="fh5co-portfolio-section">
 				<section class="banner-area">
 				<div class="container">
@@ -160,6 +76,7 @@
 						</div>
 						<p>  </p>
 						<div class="col-md-12 col-md-offset-1 text-center heading-section"><h6 align="left">Year:
+							[<a href="#2026">2026</a>]
 							[<a href="#2025">2025</a>]
 							[<a href="#2024">2024</a>]
 							[<a href="#2023">2023</a>]
@@ -174,12 +91,12 @@
 						<p>  </p>
 						<p>  </p>
 						<h6 align="left">Topic:
-							[<a href="javascript:sDiv('tag');">All</a>] 
-							[<a href="javascript:sDiv('tagCB');">Computational Biology</a>]
-							[<a href="javascript:sDiv('tagML');">ML & DL</a>]  
-							[<a href="javascript:sDiv('tagStat');">Statistics</a>]  </h6>
+							[<a href="#" onclick="return filterPubs('tag')">All</a>] 
+							[<a href="#" onclick="return filterPubs('tagCB')">Computational Biology</a>]
+							[<a href="#" onclick="return filterPubs('tagML')">ML & DL</a>]  
+							[<a href="#" onclick="return filterPubs('tagStat')">Statistics</a>]  </h6>
 						<p>  </p>
-						<p align="left"><a href="https://scholar.google.com/citations?user=nZxJGeUAAAAJ&hl=en" target="_blank">[google scholar page]</a></p>
+						<p align="left">Complete and most up-to-date list: <a href="https://scholar.google.com/citations?user=nZxJGeUAAAAJ&hl=en" target="_blank">[google scholar page]</a></p>
 						<p>  </p>
 						<br>
 						</div>
@@ -193,15 +110,125 @@
 
 				
 				
-<a name="2026"></a>
+<a id="2026"></a>
 <p> </p>
-<h5 align="center">---2026---</h5>
+<h2 class="pub-year">2026</h2>
 <p> </p>
-	<ul align="left">
+	<ul class="pub-list">
+<li id="tagML_Kuang-NeurIPS26">
+    Kuang P, Jin H, Han X, Wang Y, Yuan X, Yu Y, Xu K, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2607.09153" target="_blank" rel="noopener">KV-PRM: Efficient Process Reward Modeling via KV-Cache Transfer for Multi-Agent Test-Time Scaling</a></span>,
+    in Advances in Neural Information Processing Systems (NeurIPS) 2026. <i>NeurIPS 2026</i>
+  </li>
+<li id="tagML_Hermon-ICML26">
+    Hermon M, Gupta R, Ruan W, Sabir E, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://openreview.net/forum?id=vTJmIhNvC3" target="_blank" rel="noopener">Security–Fidelity Tradeoffs: The Hidden Cost of Prompt Injection Defense</a></span>,
+    in Proceedings of the International Conference on Machine Learning (ICML) 2026. <i>ICML 2026</i> <span class="pub-badge">Spotlight</span>
+  </li>
+<li id="tagML_Jin-ICML26">
+    Jin H, Peng K, Yu Y, Yuan X, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://openreview.net/forum?id=CzShhpY2qU" target="_blank" rel="noopener">Agent Primitives: Reusable Latent Building Blocks for Multi-Agent Systems</a></span>,
+    in Proceedings of the International Conference on Machine Learning (ICML) 2026. <i>ICML 2026</i>
+  </li>
+<li id="tagML_Yu-ICLR26">
+    Yu Y, Zhang P, Yu Y, Wei K, Luo H, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://openreview.net/forum?id=kpT5rbbLdY" target="_blank" rel="noopener">SIPDO: Closed-Loop Prompt Optimization via Synthetic Data Feedback</a></span>,
+    in Proceedings of the International Conference on Learning Representations (ICLR) 2026. <i>ICLR 2026</i>
+  </li>
+<li id="tagML_Kuang-ICLR26">
+    Kuang P, Wang Y, Han X, Liu Y, Xu K, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://openreview.net/forum?id=x85kiYqL4y" target="_blank" rel="noopener">Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling</a></span>,
+    in Proceedings of the International Conference on Learning Representations (ICLR) 2026. <i>ICLR 2026</i>
+  </li>
+<li id="tagML_Cheng-ACL26">
+    Cheng G, Jin H, Zhang W, <b>Wang H</b>, Zhuang J.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.18653/v1/2026.acl-long.1903" target="_blank" rel="noopener">Learning to Conceal Risk: Controllable Multi-turn Red Teaming for LLMs in the Financial Domain</a></span>,
+    in Proceedings of the Annual Meeting of the Association for Computational Linguistics (ACL) 2026. <i>ACL 2026</i>
+  </li>
+<li id="tagML_tagCB_Liu-ACL26">
+    Liu H, Li Y, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2507.21035" target="_blank" rel="noopener">GenoMAS: A Multi-Agent Framework for Scientific Discovery via Code-Driven Gene Expression Analysis</a></span>,
+    arXiv preprint arXiv:2507.21035. <i>arXiv</i>
+  </li>
+<li id="tagML_Kulshreshtha-COLM26">
+    Kulshreshtha D, Su H, Jin H, Hegde C, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://openreview.net/forum?id=y4PNft5oX1" target="_blank" rel="noopener">Break Me If You Can: Self-Jailbreaking of Aligned LLMs via Lexical Insertion Prompting</a></span>,
+    in Proceedings of the Conference on Language Modeling (COLM) 2026. <i>COLM 2026</i>
+  </li>
+<li id="tagML_Huang-CVPR26">
+    Huang Z, Ji Y, Rajan AS, Cai Z, Xiao W, <b>Wang H</b>, Hu J, Lee YJ.
+    <span style="font-weight: bold;"><a href="https://openreview.net/forum?id=RPVkE3Botg" target="_blank" rel="noopener">Learning to Select Visual Tools from Experience</a></span>,
+    in IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2026. <i>CVPR 2026</i>
+  </li>
+<li id="tagML_tagCB_Wang-MICCAI26">
+    Wang Y, Chen K, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1007/978-3-032-38098-2_6" target="_blank" rel="noopener">ADAPT: Adaptive Profiling Transformers for Efficient Alzheimer's Disease Diagnosis</a></span>,
+    in Medical Image Computing and Computer Assisted Intervention (MICCAI) 2026. <i>MICCAI 2026</i>
+  </li>
+<li id="tagML_Yu-AIES26">
+    Yu X, Knox E, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2608.11806" target="_blank" rel="noopener">Understanding Content Moderation in Large Language Models through Restricted Books: From Refusal to Warning</a></span>,
+    in Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society (AIES) 2026. <i>AIES 2026</i>
+  </li>
+<li id="tagML_Yu-EACL26">
+    Yu Y, Jin H, Yu Y, Zhuang J, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.18653/v1/2026.eacl-long.278" target="_blank" rel="noopener">Now You Hear Me: Audio Narrative Attacks Against Large Audio–Language Models</a></span>,
+    in Proceedings of the European Chapter of the Association for Computational Linguistics (EACL) 2026. <i>EACL 2026</i>
+  </li>
+<li id="tagML_Guan-EACL26">
+    Guan J, Jin H, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.18653/v1/2026.findings-eacl.246" target="_blank" rel="noopener">Crafting Adversarial Inputs for Large Vision-Language Models Using Black-Box Optimization</a></span>,
+    in Findings of the European Chapter of the Association for Computational Linguistics (EACL) 2026. <i>EACL Findings 2026</i>
+  </li>
+<li id="tagML_Li-AAAI26">
+    Li Z, Yuan X, Shen B, Le K, <b>Wang H</b>, Zhou X, Gao S, Dong Y.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1609/aaai.v40i38.40456" target="_blank" rel="noopener">Query-efficient Domain Knowledge Stealing against Large Language Models</a></span>,
+    in Proceedings of the AAAI Conference on Artificial Intelligence (AAAI) 2026. <i>AAAI 2026</i>
+  </li>
+<li id="tagML_Chen-CPAL26">
+    Chen K, Yu X, Zhou Y, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://openreview.net/forum?id=gwf9E5M14g" target="_blank" rel="noopener">Prompt Stability Matters: Evaluating and Optimizing Auto-Generated Prompt in General-Purpose Systems</a></span>,
+    in Proceedings of the Conference on Parsimony and Learning (CPAL) 2026. <i>CPAL 2026</i>
+  </li>
+<li id="tagCB_Li-BioAdv26">
+    Li Y, Chen J, Lu T, Tsai N-P, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1093/bioadv/vbag230" target="_blank" rel="noopener">Spatially varying gene regulation network inference from spatial transcriptomics</a></span>,
+    published in Bioinformatics Advances, 2026. <i>Bioinformatics Advances 2026</i> <span class="pub-badge">ISMB oral presentation</span>
+  </li>
+<li id="tagCB_tagStat_Zhang-npjDem26">
+    Zhang J, Yu Z, Zhang X, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1038/s44400-026-00124-5" target="_blank" rel="noopener">Stratifying Alzheimer's disease by patient-specific genetic signatures reveals cognition-linked and cross-disease heterogeneity</a></span>,
+    published in npj Dementia, 2026. <i>npj Dementia 2026</i>
+  </li>
+<li id="tagCB_Zhang-CSR26">
+    Zhang SM, Yu Z, Zhang Z, Zhang J, He C, Liu A, Chen R, Wang S, Yan L, Ding S, Li L, Yang Z, Xiao G, Zhang X, Bao K, <b>Wang H</b>, Vasilakos AV, Zhao J, Chen S, Zhang X.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1039/d5cs01469g" target="_blank" rel="noopener">AI-powered medicinal chemistry and translational drug development</a></span>,
+    published in Chemical Society Reviews, 2026. <i>Chem Soc Rev 2026</i>
+  </li>
+<li id="tagML_Chen-TMLR26">
+    Chen K, Wang P, Yu Y, Zhan X, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://openreview.net/forum?id=ZT5SJQN0CS" target="_blank" rel="noopener">Large Language Model-based Data Science Agent: A Survey</a></span>,
+    published in Transactions on Machine Learning Research (TMLR), 2026. <i>TMLR 2026</i>
+  </li>
+<li id="tagML_tagCB_Rao-JHIR26">
+    Rao H, Liu W, <b>Wang H</b>, Huang I-C, He Z, Huang X.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1007/s41666-026-00229-9" target="_blank" rel="noopener">A Scoping Review of Synthetic Data Generation by Language Models in Biomedical Research and Applications</a></span>,
+    published in Journal of Healthcare Informatics Research, 2026. <i>JHIR 2026</i>
+  </li>
+<li id="tagML_Sadyk-DIB26">
+    Sadyk U, Yerzhan M, Turan C, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1016/j.dib.2026.112634" target="_blank" rel="noopener">Kazakh banknote image dataset</a></span>,
+    published in Data in Brief, 112634, 2026. <i>Data in Brief 2026</i>
+  </li>
+<li id="tagML_tagCB_Chen-BioKDD26">
+    Chen S, Zhu C, Zhang Y, Li Y, Xie Q, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2607.23821" target="_blank" rel="noopener">SCTA: An Agentic Framework for Stable and Interpretable Target Gene Discovery from Single-Cell RNA Sequencing</a></span>,
+    in BioKDD Workshop on Knowledge Discovery in Bioinformatics, 2026. <i>BioKDD 2026</i>
+  </li>
 
 
-<div id="tagCB_Chen-PSB26">
-  <li>
+
+<li id="tagCB_Chen-PSB26">
     Chen K, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2508.04742" target="_blank">Discovery of disease relationships via transcriptomic signature analysis powered by agentic AI</a>
@@ -209,7 +236,6 @@
     in proceedings of Pacific Symposium on Biocomputing (PSB) 2026.
     <i>PSB 2026</i>
   </li>
-</div>
 
 
 </ul>
@@ -221,14 +247,29 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-md-offset-1 text-center heading-section">	
-<a name="2025"></a>
+<a id="2025"></a>
 <p> </p>
-<h5 align="center">---2025---</h5>
+<h2 class="pub-year">2025</h2>
 <p> </p>
-	<ul align="left">
+	<ul class="pub-list">
+<li id="tagML_Yadav-arXiv25">
+    Yadav A, Jin H, Luo M, Zhuang J, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2506.12274" target="_blank" rel="noopener">InfoFlood: Jailbreaking Large Language Models with Information Overload</a></span>,
+    arXiv preprint arXiv:2506.12274, 2025. <i>arXiv 2025</i> <span class="pub-badge">Covered by 404 Media, POLITICO, IT Brew</span>
+  </li>
+<li id="tagML_Ozhiken-Sensors25">
+    Ozhiken A, Sergazin G, Ozhikenov K, <b>Wang H</b>, Zhetenbayev N, Tursunbayeva G, Nurmangaliyev A, Uzbekbayev A.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.3390/s25216784" target="_blank" rel="noopener">Research and Experimental Testing of a Remotely Controlled Ankle Rehabilitation Exoskeleton Prototype</a></span>,
+    published in Sensors, 25(21):6784, 2025. <i>Sensors 2025</i>
+  </li>
+<li id="tagCB_Xu-MLCB25">
+    Xu Y, Nallamothu S, Liu H, <b>Wang H</b>.
+    <span style="font-weight: bold;">GenePrep: Unified Genomic Data Formatter for Statistical Analysis</span>,
+    Machine Learning for Computational Biology (MLCB) 2025, poster. <i>MLCB 2025</i>
+  </li>
 
-<div id="tagML_Deng-AIEthics25">
-  <li>
+
+<li id="tagML_Deng-AIEthics25">
     Deng C, Duan Y, Jin X, Chang H, Tian Y, Liu H, Wang Y, Gao K, Zou H P, Jin Y, Xiao Y, Wu S, Xie Z, Lyu W, He S, Cheng L, <b>Wang H</b>, Zhuang J.
     <span style="font-weight: bold;">
       <a href="https://link.springer.com/article/10.1007/s43681-025-00797-3" target="_blank">Deconstructing the ethics of large language models from long-standing issues to new-emerging dilemmas: a survey</a>
@@ -236,11 +277,9 @@
     published in <i>AI and Ethics</i>, Volume 5, pages 4745–4771, August 2025.
     <i>AI and Ethics 2025</i>
   </li>
-</div>
 
 
-<div id="tagML_Jin-NeurIPS25">
-  <li>
+<li id="tagML_Jin-NeurIPS25">
     Jin H, Zhang P, Luo M, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2505.24225" target="_blank">Reasoning can hurt the inductive abilities of large language models</a>
@@ -248,11 +287,9 @@
     in proceedings of Advances in Neural Information Processing Systems (NeurIPS) 2025.
     <i>NeurIPS 2025</i>
   </li>
-</div>
 
 
-<div id="tagML_Zhuang-EMNLP25">
-  <li>
+<li id="tagML_Zhuang-EMNLP25">
     Zhuang J, Jin H, Zhang Y, Kang Z, Zhang W, Dagher G G, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2505.18556" target="_blank">Exploring the Vulnerability of the Content Moderation Guardrail in Large Language Models via Intent Manipulation</a>
@@ -260,11 +297,9 @@
     in Findings of the Association for Computational Linguistics: Empirical Methods in Natural Language Processing (EMNLP) 2025.
     <i>EMNLP Findings 2025</i>
   </li>
-</div>
 
 
-<div id="tagML_Xue-BMVC25">
-  <li>
+<li id="tagML_Xue-BMVC25">
     Xue Z, <b>Wang H</b>, Qin Y, Pedarsani R.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2410.16579" target="_blank">Conflict-Aware Adversarial Training</a>
@@ -272,11 +307,9 @@
     in proceedings of British Machine Vision Conference (BMVC) 2025.
     <i>BMVC 2025</i>
   </li>
-</div>
 
 
-<div id="tagCB_Liu-MLCB25">
-  <li>
+<li id="tagCB_Liu-MLCB25">
     Liu H, Chen S, Zhang Y, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2406.15341" target="_blank">GenoTEX: An LLM Agent Benchmark for Automated Gene Expression Data Analysis</a>
@@ -284,10 +317,8 @@
     in proceedings of Machine Learning for Computational Biology (MLCB) 2025.
     <i>MLCB 2025</i>
   </li>
-</div>
 
-<div id="tagML_Leng-COLM25">
-  <li>
+<li id="tagML_Leng-COLM25">
     Leng J, Huang C, Huang L, Lin B Y, Cohen W W, <b>Wang H</b>, Huang J.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2504.00043" target="_blank">CrossWordBench: Evaluating the Reasoning Capabilities of LLMs and LVLMs with Controllable Puzzle Generation</a>
@@ -295,10 +326,8 @@
     in proceedings of Conference on Language Modeling (COLM) 2025.
     <i>COLM 2025</i>
   </li>
-</div>
 		
-<div id="tagML_Liu-ICCV25">
-  <li>
+<li id="tagML_Liu-ICCV25">
     Liu H, Li Y, Xing T, Wang P, Dalal V, Li L, He J, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2311.18531" target="_blank">Dataset Distillation via the Wasserstein Metric</a>
@@ -306,10 +335,8 @@
     in proceedings of International Conference on Computer Vision (ICCV) 2025.
     <i>ICCV 2025</i>
   </li>
-</div>
 
-<div id="tagML_Huang-ICCV25">
-  <li>
+<li id="tagML_Huang-ICCV25">
     Huang Z, Ji Y, Lee Y, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://iccv.thecvf.com/virtual/2025/poster/2700" target="_blank">Customizing Domain Adapters for Domain Generalization</a>
@@ -317,10 +344,8 @@
     in proceedings of International Conference on Computer Vision (ICCV) 2025.
     <i>ICCV 2025</i>
   </li>
-</div>
 
-<div id="tagML_Zheng-ICCV25">
-  <li>
+<li id="tagML_Zheng-ICCV25">
     Zheng R, Dasu V A, Wang Y O, <b>Wang H</b>, De la Torre F.
     <span style="font-weight: bold;">
       <a href="https://www.arxiv.org/abs/2508.01749" target="_blank">Improving Noise Efficiency in Privacy-preserving Dataset Distillation</a>
@@ -328,10 +353,8 @@
     in proceedings of International Conference on Computer Vision (ICCV) 2025.
     <i>ICCV 2025</i>
   </li>
-</div>
 
-<div id="tagML_Xu-ICHI25">
-  <li>
+<li id="tagML_Xu-ICHI25">
     Xu Y, Nallamothu S, Culbertson C, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://ieeexplore.ieee.org/document/11081607" target="_blank">Privacy-preserving analysis of wearable device data for monitoring health risks</a>
@@ -339,10 +362,8 @@
     in proceedings of ICHI 2025 (IEEE International Conference on Healthcare Informatics).
     <i>ICHI 2025</i>
   </li>
-</div>
 
-<div id="tagML_Zhang-ICML25">
-  <li>
+<li id="tagML_Zhang-ICML25">
     Zhang P, Jin H, Hu L, Li X, Kang L, Luo M, Song Y, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2412.03092" target="_blank">Revolve: Optimizing AI Systems by Tracking Response Evolution in Textual Optimization</a>
@@ -350,10 +371,8 @@
     in proceedings of International Conference on Machine Learning (ICML) 2025.
     <i>ICML 2025</i>
   </li>
-</div>
 		
-<div id="tagML_Jeoung-ICLR25">
-  <li>
+<li id="tagML_Jeoung-ICLR25">
     Jeoung S, Ge Y, <b>Wang H</b>, Diesner J.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2501.14294" target="_blank">Examining Alignment of Large Language Models through Representative Heuristics: The Case of Political Stereotypes</a>
@@ -361,10 +380,8 @@
     in proceedings of ICLR 2025.
     <i>ICLR 2025</i>
   </li>
-</div>
 
-<div id="tagML_Liu-CPAL25">
-  <li>
+<li id="tagML_Liu-CPAL25">
     Liu H, Singh A, Li Y, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2403.10476" target="_blank">Approximate Nullspace Augmented Finetuning for Robust Vision Transformers</a>
@@ -372,10 +389,8 @@
     arXiv preprint; Conference on Parsimony and Learning.
     <i>CPAL 2025</i>
   </li>
-</div>
 
-<div id="tagML_Xue-AAAI25">
-  <li>
+<li id="tagML_Xue-AAAI25">
     Xue E, Li Y, Liu H, Wang P, Shen Y, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2403.10045" target="_blank">Towards Adversarially Robust Dataset Distillation by Curvature Regularization</a>
@@ -383,10 +398,8 @@
     in proceedings of AAAI 2025.
     <i>AAAI 2025</i>
   </li>
-</div>
 
-<div id="tagML_Cai-WACV25">
-  <li>
+<li id="tagML_Cai-WACV25">
     Cai M, Huang Z, Li Y, Ojha U, <b>Wang H</b>, Lee YJ.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2306.06094" target="_blank">Leveraging Large Language Models for Scalable Vector Graphics-Driven Image Understanding</a>
@@ -394,7 +407,6 @@
     in proceedings of WACV 2025.
     <i>WACV 2025</i>
   </li>
-</div>
 		
 				</ul>
 			</div>
@@ -405,13 +417,28 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-md-offset-1 text-center heading-section">	
-<a name="2024"></a>
+<a id="2024"></a>
 <p> </p>
-<h5 align="center">---2024---</h5>
+<h2 class="pub-year">2024</h2>
 <p> </p>
-	<ul align="left">
-<div id="tagML_Zhou-NeurIPS24a">
-  <li>
+	<ul class="pub-list">
+<li id="tagML_Wang-FLFM24">
+    Wang L, Yu H, Wang J, Teney D, <b>Wang H</b>, Zhu Y, Chen Y, Yang Q, Xie X, Ji X.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1007/978-3-031-82240-7_2" target="_blank" rel="noopener">ZooPFL: Exploring Black-Box Foundation Models for Personalized Federated Learning</a></span>,
+    FL@FM Workshop at NeurIPS 2024. <i>FL@FM 2024</i> <span class="pub-badge">Outstanding Paper Award</span>
+  </li>
+<li id="tagML_Jin-arXiv24">
+    Jin H, Hu L, Li X, Zhang P, Chen C, Zhuang J, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2407.01599" target="_blank" rel="noopener">JailbreakZoo: Survey, Landscapes, and Horizons in Jailbreaking Large Language and Vision-Language Models</a></span>,
+    arXiv preprint arXiv:2407.01599, 2024. <i>arXiv 2024</i>
+  </li>
+<li id="tagML_tagCB_Leng-JEndo24">
+    Leng J, Liu J, Cheng G, <b>Wang H</b>, Quarrier S, Luo J, Jain R.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1089/end.2023.0740" target="_blank" rel="noopener">Development of UroSAM: A Machine Learning Model to Automatically Identify Kidney Stone Composition from Endoscopic Video</a></span>,
+    published in Journal of Endourology, 2024. <i>J Endourol 2024</i>
+  </li>
+
+<li id="tagML_Zhou-NeurIPS24a">
     Zhou A, Li B, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2401.17263" target="_blank">Robust Prompt Optimization for Defending Language Models Against Jailbreaking Attacks</a>
@@ -419,10 +446,8 @@
     in proceedings of NeurIPS 2024.
     <i>NeurIPS 2024</i>
   </li>
-</div>
 
-<div id="tagML_Jin-NeurIPS24">
-  <li>
+<li id="tagML_Jin-NeurIPS24">
     Jin H, Zhou A, Menke JD, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2405.20413" target="_blank">Jailbreaking Large Language Models Against Moderation Guardrails via Cipher Characters</a>
@@ -430,10 +455,8 @@
     in proceedings of NeurIPS 2024.
     <i>NeurIPS 2024</i>
   </li>
-</div>
 
-<div id="tagML_Shah-EMNLP24">
-  <li>
+<li id="tagML_Shah-EMNLP24">
     Shah SB, Shiwakoti S, Chaudhary M, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2409.14703" target="_blank">MemeCLIP: Leveraging CLIP Representations for Multimodal Meme Classification</a>
@@ -441,10 +464,8 @@
     in proceedings of EMNLP 2024.
     <i>EMNLP 2024</i>
   </li>
-</div>
 
-<div id="tagML_Fei-BIBM24a">
-  <li>
+<li id="tagML_Fei-BIBM24a">
     Fei Y, Li Y, Zhou Z, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://ieeexplore.ieee.org/document/10822415" target="_blank">DiffSim: Aligning Diffusion Model and Molecular Dynamics Simulation for Blind Docking</a>
@@ -452,10 +473,8 @@
     in proceedings of BIBM 2024.
     <i>BIBM 2024</i>
   </li>
-</div>
 
-<div id="tagML_Li-TMLR24a">
-  <li>
+<li id="tagML_Li-TMLR24a">
     Li Y, Gao Y, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2310.00616" target="_blank">Understanding Adversarial Transferability in Federated Learning</a>
@@ -463,10 +482,8 @@
     in Transactions of Machine Learning Research.
     <i>TMLR 2024</i>
   </li>
-</div>
 
-<div id="tagML_Anzaku-ACML24">
-  <li>
+<li id="tagML_Anzaku-ACML24">
     Anzaku ET, <b>Wang H</b>, Van Messem A, De Neve W.
     <span style="font-weight: bold;">
       <a href="https://link.springer.com/article/10.1007/s10994-024-06693-x" target="_blank">Re-assessing Accuracy Degradation: A Framework for Understanding DNN Behavior on Similar-but-Non-Identical Test Datasets</a>
@@ -474,10 +491,8 @@
     in proceedings of ACML Journal Track 2024.
     <i>ACML 2024</i>
   </li>
-</div>
 
-<div id="tagML_Tam-BIBM24">
-  <li>
+<li id="tagML_Tam-BIBM24">
     Tam TY, Liang L, Chen K, <b>Wang H</b>, Wu W.
     <span style="font-weight: bold;">
       <a href="https://www.arxiv.org/abs/2409.04888" target="_blank">A Quantitative Approach for Evaluating Disease Focus and Interpretability of Deep Learning Models for Alzheimer’s Disease Classification</a>
@@ -485,10 +500,8 @@
     in proceedings of BIBM 2024.
     <i>BIBM 2024</i>
   </li>
-</div>
 
-<div id="tagML_Singh-ECCV24">
-  <li>
+<li id="tagML_Singh-ECCV24">
     Singh A, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2409.13939" target="_blank">Simple Unsupervised Knowledge Distillation With Space Similarity</a>
@@ -496,10 +509,8 @@
     in proceedings of ECCV 2024.
     <i>ECCV 2024</i>
   </li>
-</div>
 
-<div id="tagML_ChenR-ECCV24a">
-  <li>
+<li id="tagML_ChenR-ECCV24a">
     Chen R, Jin H, Liu Y, Chen J, <b>Wang H</b>, Sun L.
     <span style="font-weight: bold;">
       <a href="#" target="_blank">EditShield: Protecting Unauthorized Image Editing by Instruction-guided Diffusion Models</a>
@@ -507,10 +518,8 @@
     in proceedings of ECCV 2024.
     <i>ECCV 2024</i>
   </li>
-</div>
 
-<div id="tagML_JinH-ECCV24b">
-  <li>
+<li id="tagML_JinH-ECCV24b">
     Jin H, Chen R, Chen J, Zheng H, Zhang Y, <b>Wang H</b>.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/pdf/2112.13064" target="_blank">CatchBackdoor: Backdoor Testing by Critical Trojan Neural Path Identification via Differential Fuzzing</a>
@@ -518,10 +527,8 @@
     in proceedings of ECCV 2024.
     <i>ECCV 2024</i>
   </li>
-</div>
 
-<div id="tagML_ChenH-CIKM24">
-  <li>
+<li id="tagML_ChenH-CIKM24">
     Chen H, Zhuang J, Yao Y, Jin W, <b>Wang H</b>, Xie Y, Chi CH, Choo KK.
     <span style="font-weight: bold;">
       <a href="https://dl.acm.org/doi/10.1145/3627673.3680111" target="_blank">Trustworthy and Responsible AI for Information and Knowledge Management System</a>
@@ -529,10 +536,8 @@
     in proceedings of the 33rd ACM International Conference on Information and Knowledge Management.
     <i>CIKM 2024</i>
   </li>
-</div>
 
-<div id="tagML_Zhou-ICML24">
-  <li>
+<li id="tagML_Zhou-ICML24">
     Zhou A, Yan K, Shlapentokh-Rothman M, <b>Wang H</b>, Wang YX.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2310.04406" target="_blank">Language Agent Tree Search Unifies Reasoning, Acting, and Planning in Language Models</a>
@@ -540,9 +545,7 @@
     in proceedings of ICML 2024.
     <i>ICML 2024</i>
   </li>
-</div>
-<div id="tagML_Leng-TMLR24">
-  <li>
+<li id="tagML_Leng-TMLR24">
     Leng J, Li Y, <b>Wang H.</b>
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2311.15145" target="_blank">Choosing Wisely and Learning Deeply: Selective Cross-Modality Distillation via CLIP for Domain Generalization</a>
@@ -550,9 +553,7 @@
     in proceedings of 2024 Transactions of Machine Learning Research
     <i>TMLR 2024</i>
   </li>
-</div>
-<div id="tagML_Zhang-ICLR24">
-  <li>
+<li id="tagML_Zhang-ICLR24">
     Zhang P, Liu H, Li C, Xie X, Kim S, <b>Wang H</b>
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2308.10632" target="_blank">Foundation model-oriented robustness: Robust image model evaluation with pretrained models</a>
@@ -560,27 +561,21 @@
     in proceedings of 2023 International Conference on Learning Representations.
     <i>ICLR 2024</i>
   </li>
-</div>
-<div id="tagCB_Miranda-JPM24">
-  <li>
+<li id="tagCB_Miranda-JPM24">
     Miranda O, Fan P, Qi X, <b>Wang H,</b> Brannock MD, Kosten TR, Ryan ND, Kirisci L, Wang L.
     <span style="font-weight: bold;">
       <a href="https://www.mdpi.com/2075-4426/14/1/94" target="_blank">DeepBiomarker2: Prediction of alcohol and substance use disorder risk in post-traumatic stress disorder patients using electronic medical records and multiple social determinants of health.</a>
     </span>,
     Journal of Personalized Medicine. 2024 Jan 14;14(1):94.
   </li>
-</div>
-<div id="tagCB_Miranda-drug24">
-  <li>
+<li id="tagCB_Miranda-drug24">
     Miranda O, Fan P, Qi X, <b>Wang H,</b> Brannock MD, Kosten T, Ryan ND, Kirisci L, Wang L.
     <span style="font-weight: bold;">
       <a href="https://www.sciencedirect.com/science/article/pii/S0376871623013042" target="_blank">Prediction of adverse events risk in patients with comorbid post-traumatic stress disorder and alcohol use disorder using electronic medical records by deep learning models</a>
     </span>,
     Drug and alcohol dependence. 2024 Feb 1;255:111066.
   </li>
-</div>
-<div id="tagML_Zhang-PAMI24">
-  <li>
+<li id="tagML_Zhang-PAMI24">
     Zhang J, Song B, <b>Wang H,</b> Han B, Liu T, Liu L, Sugiyama M.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2305.18377" target="_blank">BadLabel: A Robust Perspective on Evaluating and Enhancing Label-noise Learning</a>
@@ -588,7 +583,6 @@
     IEEE Transactions on Pattern Analysis and Machine Intelligence (2024).
     <i>IEEE PAMI 2024</i>
   </li>
-</div>
 </ul>
 			</div>
 		</div>
@@ -598,22 +592,30 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-md-offset-1 text-center heading-section">				
-<a name="2023"></a>
+<a id="2023"></a>
 <p> </p>
-<h5 align="center">---2023---</h5>
+<h2 class="pub-year">2023</h2>
 <p> </p>
-	<ul align="left">
-<div id="tagCB_Lee-MP23">
-  <li>
+	<ul class="pub-list">
+<li id="tagML_Wang-KDD23">
+    Wang J, Li H, <b>Wang H</b>, Pan SJ, Xie X.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1145/3580305.3599574" target="_blank" rel="noopener">Trustworthy Machine Learning: Robustness, Generalization, and Interpretability</a></span>,
+    tutorial at the ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD) 2023. <i>KDD 2023</i>
+  </li>
+<li id="tagML_Liu-arXiv23">
+    Liu H, Chaudhary M, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2307.16851" target="_blank" rel="noopener">Towards Trustworthy and Aligned Machine Learning: A Data-centric Survey with Causality Perspectives</a></span>,
+    arXiv preprint arXiv:2307.16851, 2023. <i>arXiv 2023</i>
+  </li>
+
+<li id="tagCB_Lee-MP23">
     Lee KY, <b>Wang H,</b> Yook Y, Rhodes JS, Christian-Hinman CA, Tsai NP
     <span style="font-weight: bold;">
       <a href="https://www.nature.com/articles/s41380-023-02268-9" target="_blank">Tumor suppressor p53 modulates activity-dependent synapse strengthening, autism-like behavior and hippocampus-dependent learning.</a>
     </span>,
     Molecular Psychiatry. 2023 Sep;28(9):3782-94
   </li>
-</div>
-<div id="tagML_Zhou-NeurIPS23">
-  <li>
+<li id="tagML_Zhou-NeurIPS23">
     Zhou A, Wang J, Wang YX, <b>Wang H.</b>
     <span style="font-weight: bold;">
       <a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/67f30132d98e758f7b4e28c36091d86e-Abstract-Conference.html" target="_blank">Distilling Out-of-Distribution Robustness from Vision-Language Foundation Models.</a>
@@ -621,19 +623,15 @@
     in Neural Information Processing Systems. 2024 Feb 13;36.
     <i>NeurIPS 2023</i>
   </li>
-</div>
-<div id="tagML_Bao-NeurIPS23">
-  <li>
+<li id="tagML_Bao-NeurIPS23">
     Bao W, Wei T, <b>Wang H,</b> He J. 
     <span style="font-weight: bold;">
       <a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/f555b62384279b98732204cb1a670a23-Abstract-Conference.html" target="_blank">Adaptive Test-Time Personalization for Federated Learning</a>
     </span>,
     in Neural Information Processing Systems. 2024 Feb 13;36.
     <i>NeurIPS 2023</i>
-  </li>
-</div>		
-<div id="tagML_Huang-ICCV23">
-  <li>
+  </li>		
+<li id="tagML_Huang-ICCV23">
     Huang Z, Zhou A, Ling Z, Cai M, <b>Wang H,</b> Lee YJ.
     <span style="font-weight: bold;">
       <a href="https://openaccess.thecvf.com/content/ICCV2023/html/Huang_A_Sentence_Speaks_a_Thousand_Images_Domain_Generalization_through_Distilling_ICCV_2023_paper.html" target="_blank">A Sentence Speaks a Thousand Images: Domain Generalization through Distilling CLIP with Language Guidance</a>
@@ -641,9 +639,7 @@
     InProceedings of the IEEE/CVF International Conference on Computer Vision 2023 (pp. 11685-11695).
     <i>ICCV 2023</i>
   </li>
-</div>
-<div id="tagML_Bao-ICML23">
-  <li>
+<li id="tagML_Bao-ICML23">
     Bao, W., <b>Wang, H.</b>, Wu, J., & He, J.
     <span style="font-weight: bold;">
       <a href="https://arxiv.org/abs/2306.06508" target="_blank">Optimizing the Collaboration Structure in Cross-Silo Federated Learning</a>
@@ -651,9 +647,7 @@
     in proceedings of 2023 International Conference on Machine Learning.
     <i>ICML 2023</i>
   </li>
-</div>
-<div id="tagML_Zhang-WSDM23">
-  <li>
+<li id="tagML_Zhang-WSDM23">
     Zhang, P., Guo, J., Li, C., Xie, Y., Kim, J. B., Zhang, Y., Xie, X., <b>Wamg, H.</b>, & Kim, S.
     <span style="font-weight: bold;">
       <a href="https://dl.acm.org/doi/abs/10.1145/3539597.3570445" target="_blank">Efficiently leveraging multi-level user intent for session-based recommendation via atten-mixer network</a>
@@ -661,9 +655,7 @@
     In Proceedings of the Sixteenth ACM International Conference on Web Search and Data Mining,
     <i>WSDM 2023</i>, pp. 168-176. (<font style="color:Brown">Best Paper Honorable Mention</font>)
   </li>
-</div>
-<div id="tagML_Xiang-AAAI23">
-  <li>
+<li id="tagML_Xiang-AAAI23">
     Xiang, K., Zhang, X., She, J., Liu, J., <b>Wang, H.</b>, Deng, S., & Jiang, S.
     <span style="font-weight: bold;">
       <a href="https://ojs.aaai.org/index.php/AAAI/article/view/25395" target="_blank">Toward Robust Diagnosis: A Contour Attention Preserving Adversarial Defense for COVID-19 Detection</a>
@@ -671,12 +663,11 @@
     In Proceedings of the AAAI Conference on Artificial Intelligence, vol. 37, no. 3, pp. 2928-2937.
     <i>AAAI 2023</i>
   </li>
-</div>
-<div id="tagML_Zhang-AAAI23"><li>Zhang Y.* and <b>Wang H.</b> <span style="font-weight: bold;"><a href="https://openreview.net/forum?id=UQY0bqcl_mX" target="_blank">Photong: Generating 16-Bar Melodies from Images</a></span>,
+<li id="tagML_Zhang-AAAI23">Zhang Y.* and <b>Wang H.</b> <span style="font-weight: bold;"><a href="https://openreview.net/forum?id=UQY0bqcl_mX" target="_blank">Photong: Generating 16-Bar Melodies from Images</a></span>,
 AAAI 2023 Workshop creativeAI homepage<i>
 2023 
 </i> (<font style="color:Orange">* K-12 Author</font>)
-</li></div>
+</li>
 </ul>
 			</div>
 		</div>
@@ -686,49 +677,55 @@ AAAI 2023 Workshop creativeAI homepage<i>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-md-offset-1 text-center heading-section">
-<a name="2022"></a>
+<a id="2022"></a>
 <p> </p>
-<h5 align="center">---2022---</h5>
+<h2 class="pub-year">2022</h2>
 <p> </p>
-	<ul align="left">
-<div id="tagML_tagStat_Wang-thesis22"><li><b>Wang H.</b>,<span style="font-weight: bold;"><a href="https://github.com/HaohanWang/HaohanWang.github.io/blob/master/file/haohanw_phd_lti_2021.pdf" target="_blank">Toward Robust Machine Learning by Countering Superficial Features</a></span>,
+	<ul class="pub-list">
+<li id="tagML_Wang-DataPerf22">
+    <b>Wang H</b>, Chen C, Hu L, Zhang Y, Lyu S, Wu J, Li X, Sun L, Xing EP.
+    <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2207.08944" target="_blank" rel="noopener">Robustar: Interactive Toolbox Supporting Precise Data Annotation for Robust Vision Learning</a></span>,
+    ICML DataPerf Workshop 2022. <i>DataPerf 2022</i>
+  </li>
+
+<li id="tagML_tagStat_Wang-thesis22"><b>Wang H.</b>,<span style="font-weight: bold;"><a href="file/haohanw_phd_lti_2021.pdf" target="_blank">Toward Robust Machine Learning by Countering Superficial Features</a></span>,
 Phd Thesis<i>
 2022 
 </i>
-</li></div>
-<div id="tagCB_tagStat_Wang-JCB22"><li><b>Wang H.</b>, Lopez O, Xing E. P., and Wu W.<span style="font-weight: bold;"><a href="https://www.liebertpub.com/doi/full/10.1089/cmb.2022.0280" target="_blank">Kernel Mixed Model for Transcriptome Association Study</a></span>,
+</li>
+<li id="tagCB_tagStat_Wang-JCB22"><b>Wang H.</b>, Lopez O, Xing E. P., and Wu W.<span style="font-weight: bold;"><a href="https://www.liebertpub.com/doi/full/10.1089/cmb.2022.0280" target="_blank">Kernel Mixed Model for Transcriptome Association Study</a></span>,
 Journal of Computational Biology<i>
 2022 
 </i>
-</li></div>
-<div id="tagML_Wang-KDD22"><li><b>Wang, H.</b>, Huang Z., Wu X., Xing E.P. <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2206.01909" target="_blank">Toward Learning Robust and Invariant Representations with Alignment Regularization and Data Augmentation</a></span>,
+</li>
+<li id="tagML_Wang-KDD22"><b>Wang, H.</b>, Huang Z., Wu X., Xing E.P. <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2206.01909" target="_blank">Toward Learning Robust and Invariant Representations with Alignment Regularization and Data Augmentation</a></span>,
 Proceedings of the ACM SIGKDD International Conference on Knowledge Discovery and Data Mining<i>
 KDD 2022 
 </i>
-</li></div>
-<div id="tagML_Wang-UAI22"><li><b>Wang, H.</b>, Huang Z., Zhang H., Lee Y.J., Xing E.P. <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2111.03740" target="_blank">Toward Learning Human-aligned Cross-domain Robust Models by Countering Misaligned Features</a></span>,
+</li>
+<li id="tagML_Wang-UAI22"><b>Wang, H.</b>, Huang Z., Zhang H., Lee Y.J., Xing E.P. <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2111.03740" target="_blank">Toward Learning Human-aligned Cross-domain Robust Models by Countering Misaligned Features</a></span>,
 Proceedings of the Uncertainty in Artificial Intelligence<i>
 UAI 2022 
 </i>
-</li></div>
-<div id="tagML_Wang-NAACL22"><li>Wang X, <b>Wang, H.</b>, Yang D. <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2112.08313" target="_blank">Measure and Improve Robustness in NLP Models: A Survey</a></span>,
+</li>
+<li id="tagML_Wang-NAACL22">Wang X, <b>Wang, H.</b>, Yang D. <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2112.08313" target="_blank">Measure and Improve Robustness in NLP Models: A Survey</a></span>,
 Proceedings of the Annual Conference of the North American Chapter of the Association for Computational Linguistics<i>
 NAACL 2022 
 </i>
-</li></div>
-<div id="tagML_Wang-CVPR22"><li><b>Wang, H.*</b>, Huang, Z.*, Huang, D., Lee, Y. J., & Xing, E. P.<span style="font-weight: bold;"><a href="https://openaccess.thecvf.com/content/CVPR2022/html/Huang_The_Two_Dimensions_of_Worst-Case_Training_and_Their_Integrated_Effect_CVPR_2022_paper.html" target="_blank">The Two Dimensions of Worst-Case Training and Their Integrated Effect for Out-of-Domain Generalization</a></span>,
+</li>
+<li id="tagML_Wang-CVPR22"><b>Wang, H.*</b>, Huang, Z.*, Huang, D., Lee, Y. J., & Xing, E. P.<span style="font-weight: bold;"><a href="https://openaccess.thecvf.com/content/CVPR2022/html/Huang_The_Two_Dimensions_of_Worst-Case_Training_and_Their_Integrated_Effect_CVPR_2022_paper.html" target="_blank">The Two Dimensions of Worst-Case Training and Their Integrated Effect for Out-of-Domain Generalization</a></span>,
 Proceedings of the 2022 Annual Conference of the North American Chapter of the Association for Computational Linguistics<i>
 CVPR 2022 
 </i>
-</li></div>
-<div id="tagCB_tagStat_Miranda-JPM22"><li>Miranda, O., Fan P., Qi X., Yu Z., Ying J., <b>Wang H.</b>, Brent D.A., Silverstein J.C., Chen Y., Wang L.<span style="font-weight: bold;"><a href="https://www.mdpi.com/2075-4426/12/4/524" target="_blank">DeepBiomarker: identifying important lab tests from electronic medical records for the prediction of suicide-related events among PTSD patients</a></span>,
+</li>
+<li id="tagCB_tagStat_Miranda-JPM22">Miranda, O., Fan P., Qi X., Yu Z., Ying J., <b>Wang H.</b>, Brent D.A., Silverstein J.C., Chen Y., Wang L.<span style="font-weight: bold;"><a href="https://www.mdpi.com/2075-4426/12/4/524" target="_blank">DeepBiomarker: identifying important lab tests from electronic medical records for the prediction of suicide-related events among PTSD patients</a></span>,
 Journal of personalized medicine, 12(4), 524.
-</li></div>
-<div id="tagCB_tagStat_Wang-RECOMB22"><li><b>Wang H.</b>, Lopez O, Wu W., and Xing E. P.,<span style="font-weight: bold;"><a href="https://link.springer.com/chapter/10.1007/978-3-031-04749-7_7" target="_blank">A Network-structured High-dimension Variable Selection Method with P-values, for Gene Set Prioritization with Transcriptome Association Study Guided by Regulatory Network</a></span>,
+</li>
+<li id="tagCB_tagStat_Wang-RECOMB22"><b>Wang H.</b>, Lopez O, Wu W., and Xing E. P.,<span style="font-weight: bold;"><a href="https://link.springer.com/chapter/10.1007/978-3-031-04749-7_7" target="_blank">A Network-structured High-dimension Variable Selection Method with P-values, for Gene Set Prioritization with Transcriptome Association Study Guided by Regulatory Network</a></span>,
 International Conference on Research in Computational Molecular Biology<i>
 RECOMB 2022 
 </i>
-</li></div>
+</li>
 </ul>
 			</div>
 		</div>
@@ -738,27 +735,27 @@ RECOMB 2022
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-md-offset-1 text-center heading-section">							
-<a name="2021"></a>
+<a id="2021"></a>
 <p> </p>
-<h5 align="center">---2021---</h5>
+<h2 class="pub-year">2021</h2>
 <p> </p>
-	<ul align="left">
-<div id="tagCB_tagStat_Wang-JCB21"><li><b>Wang H.</b>, Aragam B., and Xing E. P.,<span style="font-weight: bold;"><a href="https://arxiv.org/abs/2111.03739" target="_blank">Tradeoffs of Linear Mixed Models in Genome-wide Association Studies</a></span>,<i>
+	<ul class="pub-list">
+<li id="tagCB_tagStat_Wang-JCB21"><b>Wang H.</b>, Aragam B., and Xing E. P.,<span style="font-weight: bold;"><a href="https://arxiv.org/abs/2111.03739" target="_blank">Tradeoffs of Linear Mixed Models in Genome-wide Association Studies</a></span>,<i>
 Journal of Computational Biology 29.3 (2022): 233-242
 </i>
-</li></div>
-<div id="tagML_Ge-NIPS21"><li>Songwei Ge, Mishra S., <b>Wang H</b>, Li, C., and Jacobs. D., <span style="font-weight: bold;"><a href="https://proceedings.neurips.cc/paper/2021/hash/e5afb0f2dbc6d39b312d7406054cb4c6-Abstract.html" target="_blank">Robust Contrastive Learning Using Negative Samples with Diminished Semantics</a></span>,<i>
+</li>
+<li id="tagML_Ge-NIPS21">Songwei Ge, Mishra S., <b>Wang H</b>, Li, C., and Jacobs. D., <span style="font-weight: bold;"><a href="https://proceedings.neurips.cc/paper/2021/hash/e5afb0f2dbc6d39b312d7406054cb4c6-Abstract.html" target="_blank">Robust Contrastive Learning Using Negative Samples with Diminished Semantics</a></span>,<i>
 Advances in Neural Information Processing Systems
 </i>(NeurIPS 2021). 
-</li></div>
-<div id="tagCB_tagStat_Wang-BMC21"><li><b>Wang H.</b>, Pei F., Vanyukov MM., Bahar I., Wu W., Xing E. P.,<span style="font-weight: bold;"><a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-03959-2" target="_blank">Coupled Mixed Model for Joint Genetic Analysis of Complex Disorders with Two Independently Collected Data Sets</a></span>,<i>
+</li>
+<li id="tagCB_tagStat_Wang-BMC21"><b>Wang H.</b>, Pei F., Vanyukov MM., Bahar I., Wu W., Xing E. P.,<span style="font-weight: bold;"><a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-03959-2" target="_blank">Coupled Mixed Model for Joint Genetic Analysis of Complex Disorders with Two Independently Collected Data Sets</a></span>,<i>
 BMC bioinformatics 22.1 (2021): 1-14 
 </i>
-</li></div>
-<div id="tagCB_Du-Bioinfo21"><li>Du X., <b>Wang H.</b>, Zhu Z., Zeng X., Chang YW., Zhang J., and Xu M.<span style="font-weight: bold;"><a href="https://academic.oup.com/bioinformatics/article-abstract/37/16/2340/6147019" target="_blank">Active Learning to Classify Macromolecular Structures in Situ for Less Supervision in Cryo-electron Tomography</a></span>,<i>
+</li>
+<li id="tagCB_Du-Bioinfo21">Du X., <b>Wang H.</b>, Zhu Z., Zeng X., Chang YW., Zhang J., and Xu M.<span style="font-weight: bold;"><a href="https://academic.oup.com/bioinformatics/article-abstract/37/16/2340/6147019" target="_blank">Active Learning to Classify Macromolecular Structures in Situ for Less Supervision in Cryo-electron Tomography</a></span>,<i>
 Bioinformatics (2021) 
 </i>
-</li></div>
+</li>
 </ul>	
 
 			</div>
@@ -770,39 +767,36 @@ Bioinformatics (2021)
 		<div class="row">
 			<div class="col-md-12 col-md-offset-1 text-center heading-section">
 						
-<a name="2020"></a>
+<a id="2020"></a>
 <p> </p>
-<h5 align="center">---2020---</h5>
+<h2 class="pub-year">2020</h2>
 <p> </p>
-      <ul align="left">
-<div id="tagML_tagCB_Zheng-plos20"><li>Zheng Y., <b>Wang H.</b>, Yang Z., Gao X., Xing E. P.,and Xu M, <span style="font-weight: bold;"><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008297" target="_blank">Poly(A)-DG: a Deep-learning-based Domain Generalization Method to Identify Cross-species Poly(A) Signal without Prior Knowledge from Target Species</a></span>,<i>
+      <ul class="pub-list">
+<li id="tagML_tagCB_Zheng-plos20">Zheng Y., <b>Wang H.</b>, Yang Z., Gao X., Xing E. P.,and Xu M, <span style="font-weight: bold;"><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008297" target="_blank">Poly(A)-DG: a Deep-learning-based Domain Generalization Method to Identify Cross-species Poly(A) Signal without Prior Knowledge from Target Species</a></span>,<i>
 PLOS Computational Biology, 16(11): e1008297 
 </i>
-</li></div>	      	      
-<div id="tagML_Huang-eccv20"><li><b>Wang H</b>, Huang Z., Xing E. P.,and Huang D, and  <span style="font-weight: bold;"><a href="https://link.springer.com/chapter/10.1007/978-3-030-58536-5_8" target="_blank">Self-Challenging Improves Cross-Domain Generalization</a></span>,<i>
+</li>	      	      
+<li id="tagML_Huang-eccv20"><b>Wang H</b>, Huang Z., Xing E. P.,and Huang D, and  <span style="font-weight: bold;"><a href="https://link.springer.com/chapter/10.1007/978-3-030-58536-5_8" target="_blank">Self-Challenging Improves Cross-Domain Generalization</a></span>,<i>
 Proceedings of European Conference on Computer Vision, (ECCV 2020)
 </i>(ECCV 2020). (<font style="color:Orange">top 2% Oral</font>)
-</li></div>
-<div id="tagML_Wang-cvpr20"><li><b>Wang H</b>, Wu X., Huang Z., and Xing E. P., <span style="font-weight: bold;"><a href="http://openaccess.thecvf.com/content_CVPR_2020/html/Wang_High-Frequency_Component_Helps_Explain_the_Generalization_of_Convolutional_Neural_Networks_CVPR_2020_paper.html" target="_blank">High Frequency Component Helps Explain the Generalization of Convolutional Neural Networks</a></span>,<i>
+</li>
+<li id="tagML_Wang-cvpr20"><b>Wang H</b>, Wu X., Huang Z., and Xing E. P., <span style="font-weight: bold;"><a href="http://openaccess.thecvf.com/content_CVPR_2020/html/Wang_High-Frequency_Component_Helps_Explain_the_Generalization_of_Convolutional_Neural_Networks_CVPR_2020_paper.html" target="_blank">High Frequency Component Helps Explain the Generalization of Convolutional Neural Networks</a></span>,<i>
 Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition
 </i>(CVPR 2020). (<font style="color:Orange">top 2% Oral</font>)
-</li></div>
-<div
- id="tagCB_tagML_Ge-RECOMB20"><li> Ge, S., <b>Wang, H.</b>., Alavi, A., Xing, E. and Bar-Joseph, Z, <span style="font-weight: bold;"><a
+</li>
+<li id="tagCB_tagML_Ge-RECOMB20"> Ge, S., <b>Wang, H.</b>., Alavi, A., Xing, E. and Bar-Joseph, Z, <span style="font-weight: bold;"><a
  href="https://www.liebertpub.com/doi/abs/10.1089/cmb.2020.0439" target="_blank">Supervised Adversarial Alignment of scRNA-seq Data</a></span>,<i>
 Proceedings of 24th International Conference on Research in Computational Molecular Biology
 </i>(RECOMB 2020).
- </i></li></div>
-<div
- id="tagCB_Wang-BMC_MG20"><li> <b>Wang, H.</b>, Vanyukov, MM., Xing, EP. & Wu, W , <span style="font-weight: bold;"><a
+ </i></li>
+<li id="tagCB_Wang-BMC_MG20"> <b>Wang, H.</b>, Vanyukov, MM., Xing, EP. & Wu, W , <span style="font-weight: bold;"><a
  href="https://link.springer.com/article/10.1186/s12920-020-0667-4" target="_blank">Discovering Weaker Genetic Associations Guided by Known Associations</a></span>,<i>
 BMC medical genomics, 13(3), 1-10.
- </i></li></div>
-<div
- id="tagCB_Wang-BMC_Bioinfo20"><li> <b>Wang, H.</b>, Yue, T., Yang, J., Wu, W., & Xing, EP., <span style="font-weight: bold;"><a
+ </i></li>
+<li id="tagCB_Wang-BMC_Bioinfo20"> <b>Wang, H.</b>, Yue, T., Yang, J., Wu, W., & Xing, EP., <span style="font-weight: bold;"><a
  href="https://link.springer.com/article/10.1186/s12859-019-3300-9" target="_blank">Deep Mixed Model for Marginal Epistasis Detection and Population Stratification Correction in Genome-wide Association Studies</a></span>,<i>
 BMC bioinformatics, 20(23), 1-11..
- </i></li></div>
+ </i></li>
 </ul>
 			</div>
 		</div>
@@ -812,40 +806,62 @@ BMC bioinformatics, 20(23), 1-11..
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-md-offset-1 text-center heading-section">
-<a name="2019"></a>
+<a id="2019"></a>
 <p> </p>
-<h5 align="center">---2019---</h5>
+<h2 class="pub-year">2019</h2>
 <p> </p>
-      <ul align="left">
-<div id="tagML_Wang-nips19"><li><b>Wang H</b>, Ge S., Lipton Z. C. , and Xing E. P., <span style="font-weight: bold;"><a href="https://proceedings.neurips.cc/paper/2019/hash/3eefceb8087e964f89c2d59e8a249915-Abstract.html" target="_blank">Learning Robust Global Representations by Penalizing Local Predictive Power</a></span>,<i>
+      <ul class="pub-list">
+<li id="tagCB_tagStat_Wang-bibm19a">
+    <b>Wang H</b>, Lu C, Wu W, Xing EP.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1109/BIBM47256.2019.8983108" target="_blank" rel="noopener">Graph-structured Sparse Mixed Models for Genetic Association with Confounding Factors Correction</a></span>,
+    in IEEE International Conference on Bioinformatics and Biomedicine (BIBM) 2019. <i>BIBM 2019</i>
+  </li>
+<li id="tagML_tagCB_Wang-bibm19b">
+    <b>Wang H</b>, Wei Y, Cao M, Xu M, Wu W, Xing EP.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1109/BIBM47256.2019.8983275" target="_blank" rel="noopener">Deep Inductive Matrix Completion for Biomedical Interaction Prediction</a></span>,
+    in IEEE International Conference on Bioinformatics and Biomedicine (BIBM) 2019. <i>BIBM 2019</i>
+  </li>
+<li id="tagML_tagCB_Wu-bibm19">
+    Wu X, Mao Y, <b>Wang H</b>, Zeng X, Gao X, Xing EP, Xu M.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1109/BIBM47256.2019.8982954" target="_blank" rel="noopener">Regularized Adversarial Training (RAT) for Robust Cellular Electron Cryo Tomograms Classification</a></span>,
+    in IEEE International Conference on Bioinformatics and Biomedicine (BIBM) 2019. <i>BIBM 2019</i>
+  </li>
+<li id="tagML_He-emnlpws19">
+    He H, Zha S, <b>Wang H</b>.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.18653/v1/D19-6115" target="_blank" rel="noopener">Unlearn Dataset Bias in Natural Language Inference by Fitting the Residual</a></span>,
+    DeepLo Workshop at EMNLP 2019. <i>EMNLP-W 2019</i>
+  </li>
+<li id="tagML_Xu-tits19">
+    Xu M, Wu J, <b>Wang H</b>, Cao M.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1109/TITS.2019.2941649" target="_blank" rel="noopener">Anomaly Detection in Road Networks Using Sliding-Window Tensor Factorization</a></span>,
+    published in IEEE Transactions on Intelligent Transportation Systems, 2019. <i>T-ITS 2019</i>
+  </li>
+
+<li id="tagML_Wang-nips19"><b>Wang H</b>, Ge S., Lipton Z. C. , and Xing E. P., <span style="font-weight: bold;"><a href="https://proceedings.neurips.cc/paper/2019/hash/3eefceb8087e964f89c2d59e8a249915-Abstract.html" target="_blank">Learning Robust Global Representations by Penalizing Local Predictive Power</a></span>,<i>
 Proceedings of Thirty-fourth Conference on Neural Information Processing Systems
 </i>(NeurIPS 2019).
-</li></div>
-<div id="tagML_Wang-iclr19"><li><b>Wang H</b>, He Z., Lipton Z. C. , and Xing E. P., <span style="font-weight: bold;"><a href="https://arxiv.org/abs/1903.06256" target="_blank">Learning Robust Representations by Projecting Superficial Statistics Out</a></span>,<i>
+</li>
+<li id="tagML_Wang-iclr19"><b>Wang H</b>, He Z., Lipton Z. C. , and Xing E. P., <span style="font-weight: bold;"><a href="https://arxiv.org/abs/1903.06256" target="_blank">Learning Robust Representations by Projecting Superficial Statistics Out</a></span>,<i>
 Proceedings of Seventh International Conference on Learning Representations
 </i>(ICLR 2019). (<font style="color:Orange">top 1% Oral</font>)
-</li></div>
-<div
- id="tagML_Wang-aaai19"><li><b>Wang H</b>, Sun D., and Xing, E. P. <span style="font-weight: bold;"><a
+</li>
+<li id="tagML_Wang-aaai19"><b>Wang H</b>, Sun D., and Xing, E. P. <span style="font-weight: bold;"><a
  href="https://ojs.aaai.org/index.php/AAAI/article/view/4696" target="_blank">What If We Simply Swap the Two Text Fragments? A Straightforward yet Effective Way to Test the Robustness of Methods to Confounding Signals in Nature Language Inference Tasks</a></span>,<i>
 Proceedings of Thirty-third AAAI Conference on Artificial Intelligence
  </i>(AAAI 2019). (Oral)
-	  </li></div>
-<div
- id="tagML_tagCB_Wang-psb19a"><li><b>Wang H</b>, Wu Z., and Xing E. P., <span style="font-weight: bold;"><a
+	  </li>
+<li id="tagML_tagCB_Wang-psb19a"><b>Wang H</b>, Wu Z., and Xing E. P., <span style="font-weight: bold;"><a
  href="https://www.worldscientific.com/doi/abs/10.1142/9789813279827_0006" target="_blank">Removing Confounding Factors Associated Weights in Deep Neural Networks Improves the Prediction Accuracy for Healthcare Applications</a></span>,<i>
 Proceedings of 24th Pacific Symposium on Biocomputing
- </i>(PSB 2019). (Oral)</li></div>
-<div
- id="tagML_tagCB_Wang-psb19b"><li><b>Wang H</b>, Liu X., Tao Y., Ye W., Jin Q., Cohen W. W., and Xing E. P., <span style="font-weight: bold;"><a
+ </i>(PSB 2019). (Oral)</li>
+<li id="tagML_tagCB_Wang-psb19b"><b>Wang H</b>, Liu X., Tao Y., Ye W., Jin Q., Cohen W. W., and Xing E. P., <span style="font-weight: bold;"><a
  href="https://www.worldscientific.com/doi/abs/10.1142/9789813279827_0011" target="_blank">Automatic Human-like Mining and Constructing Reliable Genetic Association Database with Deep Reinforcement Learning</a></span>,<i>
 Proceedings of 24th Pacific Symposium on Biocomputing
- </i>(PSB 2019).</li></div>
-<div
- id="tagML_Xiao-nd19"><li>Xiao Y, Chen D, Wei S, Li Q, <b>Wang H</b>, and Xu M. <span style="font-weight: bold;"><a
+ </i>(PSB 2019).</li>
+<li id="tagML_Xiao-nd19">Xiao Y, Chen D, Wei S, Li Q, <b>Wang H</b>, and Xu M. <span style="font-weight: bold;"><a
  href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=nZxJGeUAAAAJ&cstart=20&pagesize=80&sortby=pubdate&citation_for_view=nZxJGeUAAAAJ:PELIpwtuRlgC" target="_blank">Rumor Propagation Dynamic Model Based on Evolutionary Game and Anti-rumor</a></span>,<i>
 Nonlinear Dynamics. 2019 Jan 1;95(1):523-39.
- </i> </li></div>
+ </i> </li>
 </ul>
 			</div>
 		</div>
@@ -855,32 +871,34 @@ Nonlinear Dynamics. 2019 Jan 1;95(1):523-39.
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-md-offset-1 text-center heading-section">
-<a name="2018"></a>
+<a id="2018"></a>
 <p> </p>
-<h5 align="center">---2018---</h5>
+<h2 class="pub-year">2018</h2>
 <p> </p>
-      <ul align="left">
-<div
- id="tagML_tagStat_tagCB_Wang-bioinfo18"><li><b>Wang H</b>, Lengerich B. J., Aragam B., and Xing E. P., <span style="font-weight: bold;"><a
+      <ul class="pub-list">
+<li id="tagML_Xu-tits18">
+    Xu M, Wu J, Liu M, Xiao Y, <b>Wang H</b>, Hu D.
+    <span style="font-weight: bold;"><a href="https://doi.org/10.1109/TITS.2018.2817282" target="_blank" rel="noopener">Discovery of Critical Nodes in Road Networks through Mining from Vehicle Trajectories</a></span>,
+    published in IEEE Transactions on Intelligent Transportation Systems, 2018. <i>T-ITS 2018</i>
+  </li>
+
+<li id="tagML_tagStat_tagCB_Wang-bioinfo18"><b>Wang H</b>, Lengerich B. J., Aragam B., and Xing E. P., <span style="font-weight: bold;"><a
  href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=nZxJGeUAAAAJ&cstart=20&pagesize=80&sortby=pubdate&citation_for_view=nZxJGeUAAAAJ:-f6ydRqryjwC" target="_blank">Precision Lasso: Accounting for Correlations and Linear Dependencies in High-Dimensional Genomic Data</a></span>,<i> Bioinformatics, PMID: 30184048 DOI:10.1093/bioinformatics/bty750 , 2018.
- </i></li></div>
-<div
- id="tagCB_Wang-methods18a"><li><b>Wang H</b>, Liu X., Xiao Y., Xu M. and Xing E. P., <span style="font-weight: bold;"><a
+ </i></li>
+<li id="tagCB_Wang-methods18a"><b>Wang H</b>, Liu X., Xiao Y., Xu M. and Xing E. P., <span style="font-weight: bold;"><a
  href="https://ieeexplore.ieee.org/abstract/document/8217649/" target="_blank">Multiplex Confounding Factor Correction for Genomic Association Mapping with Squared Sparse Linear Mixed Model</a></span>,<i>
 Methods, 2018 Aug 1; 145: 33?40.
  </i>
 <!--<b>(IEEE BIBM 2017 student award)</b>-->
-</li></div>
-<div
- id="tagStat_tagCB_Wang-methods18b"><li><b>Wang H</b>, Aragam B. and Xing E. P., <span style="font-weight: bold;"><a
+</li>
+<li id="tagStat_tagCB_Wang-methods18b"><b>Wang H</b>, Aragam B. and Xing E. P., <span style="font-weight: bold;"><a
  href="https://ieeexplore.ieee.org/abstract/document/8217687/" target="_blank">Variable Selection in Heterogeneous Datasets: A Truncated-rank Sparse Linear Mixed Model with Applications to Genome-wide Association Studies</a></span>,<i>
 Methods, 2018 2018 Aug 1; 145: 2?9.
- </i></li></div>
-<div
- id="tagML_tagCB_Yue-springer18"><li>Yue, T., & <b>Wang H</b>, <span style="font-weight: bold;"><a
+ </i></li>
+<li id="tagML_tagCB_Yue-springer18">Yue, T., & <b>Wang H</b>, <span style="font-weight: bold;"><a
  href="https://arxiv.org/abs/1802.00810" target="_blank">Deep Learning for Genomics: A Concise Overview</a></span>,<i>
 arXiv preprint arXiv:1802.00810.
- </i></li></div>
+ </i></li>
 </ul>
 			</div>
 		</div>
@@ -890,26 +908,23 @@ arXiv preprint arXiv:1802.00810.
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-md-offset-1 text-center heading-section">
-<a name="2017"></a>
+<a id="2017"></a>
 <p> </p>
-<h5 align="center">---2017---</h5>
+<h2 class="pub-year">2017</h2>
 <p> </p>
-      <ul align="left">
-<div
- id="tagCB_Lee-methods17"><li>Lee, S., <b>Wang, H.</b>, & Xing, EP.</b>, <span style="font-weight: bold;"><a
+      <ul class="pub-list">
+<li id="tagCB_Lee-methods17">Lee, S., <b>Wang, H.</b>, & Xing, EP.</b>, <span style="font-weight: bold;"><a
  href="https://www.sciencedirect.com/science/article/pii/S1046202317300816" target="_blank">Backward Genome-Transcriptome-phenome Association Mapping</a></span>,<i>
 Methods, 129, 18-23.
- </i></li></div>
-<div
- id="tagML_Wang-arXiv17"><li><b>Wang, H.</b> & Raj, B., <span style="font-weight: bold;"><a
+ </i></li>
+<li id="tagML_Wang-arXiv17"><b>Wang, H.</b> & Raj, B., <span style="font-weight: bold;"><a
  href="https://arxiv.org/abs/1702.07800" target="_blank">On the Origin of Deep Learning</a></span>,<i>
 arXiv preprint arXiv:1702.07800.
- </i></li></div>
-<div
- id="tagML_Wang-icme17"><li><b>Wang, H.</b>, Meghawat, A., Morency, L. P., & Xing, E. P., <span style="font-weight: bold;"><a
+ </i></li>
+<li id="tagML_Wang-icme17"><b>Wang, H.</b>, Meghawat, A., Morency, L. P., & Xing, E. P., <span style="font-weight: bold;"><a
  href="https://ieeexplore.ieee.org/abstract/document/8019301/" target="_blank">Select-Additive Learning: Improving Generalization Multimodal Sentiment Analysis</a></span>,<i>
 In 2018 IEEE International Conference on Multimedia and Expo
- </i>(ICME 2017). <b><a href="http://www.cs.cmu.edu/~haohanw/SAL.html">[Data]</a><a href="https://github.com/HaohanWang/SelectAdditiveLearning">[Code]</a></b></li></div> 
+ </i>(ICME 2017). <b><a href="http://www.cs.cmu.edu/~haohanw/SAL.html">[Data]</a><a href="https://github.com/HaohanWang/SelectAdditiveLearning">[Code]</a></b></li> 
 </ul>
 			</div>
 		</div>
@@ -919,20 +934,18 @@ In 2018 IEEE International Conference on Multimedia and Expo
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-md-offset-1 text-center heading-section">
-<a name="2016"></a>
+<a id="2016"></a>
 <p> </p>
-<h5 align="center">---2016---</h5>
+<h2 class="pub-year">2016</h2>
 <p> </p>
-      <ul align="left">					
-<div
- id="tagML_tagCB_Yang-nipsws16"><li>Yang, J., <b>Wang, H.</b>, Zhu, J., & Xing, E. P., <span style="font-weight: bold;"><a
+      <ul class="pub-list">					
+<li id="tagML_tagCB_Yang-nipsws16">Yang, J., <b>Wang, H.</b>, Zhu, J., & Xing, E. P., <span style="font-weight: bold;"><a
  href="http://www.cs.cmu.edu/~haohanw/papers/2016/Yang_etal_nipsws16.pdf" target="_blank">SeDMiD for Confusion Detection: Mind State from Time Series Brain Wave Data</a></span>,<i>
 In TSW workshop NIPS 2016
- </i></li></div> 								
-<div
- id="tagML_tagCB_Wang-bibm16"><li><b>Wang H</b>, Yang, J., <span style="font-weight: bold;"><a
+ </i></li> 								
+<li id="tagML_tagCB_Wang-bibm16"><b>Wang H</b>, Yang, J., <span style="font-weight: bold;"><a
  href="https://arxiv.org/abs/1611.10252" target="_blank">Multiple Confounders Correction with Regularized Linear Mixed Effect Models, with Application in Biological  Processes.</a></span>,<i>in 2016 IEEE International Conference on Bioinformatics and Biomedicine.
- </i>(BIBM 16)</li></div>
+ </i>(BIBM 16)</li>
 </ul>
 			</div>
 		</div>
@@ -942,30 +955,26 @@ In TSW workshop NIPS 2016
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-md-offset-1 text-center heading-section">
-<a name="pre"></a>
+<a id="pre"></a>
 <p> </p>
-<h5 align="center">---Previous---</h5>
+<h2 class="pub-year">Previous</h2>
 <p> </p>
-      <ul align="left">										
-<div
- id="tagML_tagCB_Gupta-bibm15"><li>Gupta, A., <b>Wang, H.</b>, & Ganapathiraju, M., <span style="font-weight: bold;"><a
+      <ul class="pub-list">										
+<li id="tagML_tagCB_Gupta-bibm15">Gupta, A., <b>Wang, H.</b>, & Ganapathiraju, M., <span style="font-weight: bold;"><a
  href="https://ieeexplore.ieee.org/abstract/document/7359871/" target="_blank">Learning Structure in Gene Expression Data Using Deep Architectures, an Application to Gene Clustering.</a></span>,<i>in 2015 IEEE International Conference on Bioinformatics and Biomedicine.
- </i>(BIBM 15)</li></div>
-<div
- id="tagML_Moon-nipsws15"><li>Moon, S., Kim, S., & <b>Wang, H.</b>, <span style="font-weight: bold;"><a
+ </i>(BIBM 15)</li>
+<li id="tagML_Moon-nipsws15">Moon, S., Kim, S., & <b>Wang, H.</b>, <span style="font-weight: bold;"><a
  href="https://www.researchgate.net/profile/Haohan-Wang-4/publication/269417514_Multimodal_Transfer_Deep_Learning_for_Audio_Visual_Recognition/links/566c86cc08aea0892c4fd29e/Multimodal-Transfer-Deep-Learning-for-Audio-Visual-Recognition.pdf" target="_blank">Multimodal Transfer Deep Learning for Audio Visual Recognition</a></span>,<i>
 MMML Workshop NIPS 2015
- </i></li></div>
-<div
- id="tag_Wang-dev13"><li><b>Wang, H.</b>, Raza, A. A., Lin, Y., & Rosenfeld, R., <span style="font-weight: bold;"><a
+ </i></li>
+<li id="tag_Wang-dev13"><b>Wang, H.</b>, Raza, A. A., Lin, Y., & Rosenfeld, R., <span style="font-weight: bold;"><a
  href="https://dl.acm.org/doi/abs/10.1145/2537052.2537062" target="_blank">Behavior Analysis of Low-literate Users of a Viral Speech-based Telephone Service.</a></span>,<i>In Proceedings of the 4th Annual Symposium on Computing for Development.
- </i>(ACM DEV 13)</li></div>
-<div
- id="tagML_tagCB_Wang-aied13"><li><b>Wang, H.</b>, Li, Y., Hu, X., Yang, Y., Meng, Z., & Chang, K. M., <span style="font-weight: bold;"><a
+ </i>(ACM DEV 13)</li>
+<li id="tagML_tagCB_Wang-aied13"><b>Wang, H.</b>, Li, Y., Hu, X., Yang, Y., Meng, Z., & Chang, K. M., <span style="font-weight: bold;"><a
  href="https://people.csail.mit.edu/zp/moocshop2013/paper_8.pdf" target="_blank">Using EEG to Improve Massive Open Online Courses Feedback Interaction</a></span>,<i>
 In AIED Workshops.</i>
 <b><a href="https://www.kaggle.com/wanghaohan/eeg-brain-wave-for-confusion" target="_blank">[Data]</a><a href="https://github.com/HaohanWang/BioImaging" target="_blank">[Code]</a><a href="https://www.youtube.com/watch?v=ACjLuMvbAnM" target="_blank">[Video]</a></b>
-</li></div>
+</li>
 </ul>
 			</div>
 		</div>
@@ -974,32 +983,12 @@ In AIED Workshops.</i>
 </div>
 </div>	
 
-            <!-- start footer Area -->
-            <footer class="footer-area section-gap">
-                <div class="container">
-                    <div class="row">
-                    </div>
-                </div>
-            </footer>
-            <!-- End footer Area -->		
-
-			<script src="js/vendor/jquery-2.2.4.min.js"></script>
-			<script src="js/popper.min.js"></script>
-			<script src="js/vendor/bootstrap.min.js"></script>			
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>			
-  			<script src="js/easing.min.js"></script>			
-			<script src="js/hoverIntent.js"></script>
-			<script src="js/superfish.min.js"></script>	
-			<script src="js/jquery.ajaxchimp.min.js"></script>
-			<script src="js/jquery.magnific-popup.min.js"></script>	
-    		<script src="js/jquery.tabs.min.js"></script>						
-			<script src="js/jquery.nice-select.min.js"></script>	
-            <script src="js/isotope.pkgd.min.js"></script>			
-			<script src="js/waypoints.min.js"></script>
-			<script src="js/jquery.counterup.min.js"></script>
-			<script src="js/simple-skillbar.js"></script>							
-			<script src="js/owl.carousel.min.js"></script>							
-			<script src="js/mail-script.js"></script>	
-			<script src="js/main.js"></script>	
-		</body>
-	</html>
+            	</main>
+	<footer class="footer-area">
+		<div class="container text-center">
+			<p>© 2026 Haohan Wang · School of Information Sciences, University of Illinois Urbana-Champaign · <a href="index.html">Home</a></p>
+		</div>
+	</footer>
+	<script src="js/site.js" defer></script>
+</body>
+</html>
