@@ -130,11 +130,16 @@ def load_posts():
     return sorted(posts, key=lambda p: p["date"], reverse=True)
 
 
+def iso_dt(d):
+    """Full ISO 8601 timestamp (noon US Central); Google rejects date-only values."""
+    return f"{d.isoformat()}T12:00:00-05:00"
+
+
 def render_post(p):
     url = f"{BASE}blog/{p['slug']}.html"
     ld = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": p["title"],
           "description": p.get("subtitle", ""), "url": url, "mainEntityOfPage": url,
-          "datePublished": p["date"].isoformat(), "dateModified": p["date"].isoformat(),
+          "datePublished": iso_dt(p["date"]), "dateModified": iso_dt(p["date"]),
           "author": PERSON, "publisher": PERSON, "keywords": p["tags"], "wordCount": p["words"],
           "image": BASE + "img/haohanwang.jpg", "inLanguage": "en",
           "isPartOf": {"@type": "Blog", "@id": BASE + "blog/", "name": "Haohan Wang's blog"}}
@@ -160,7 +165,7 @@ def render_index(posts):
     ld = {"@context": "https://schema.org", "@type": "Blog", "@id": url, "url": url,
           "name": "Haohan Wang's blog", "author": PERSON, "inLanguage": "en",
           "blogPost": [{"@type": "BlogPosting", "headline": p["title"], "url": f"{BASE}blog/{p['slug']}.html",
-                        "datePublished": p["date"].isoformat()} for p in posts]}
+                        "datePublished": iso_dt(p["date"])} for p in posts]}
     desc = "Personal perspectives from Haohan Wang (UIUC) on AI research, trustworthy AI, AI for science, and teaching."
     head = HEAD.format(title="Blog | Haohan Wang – Perspectives on AI Research and Teaching", desc=esc(desc),
                        url=url, base=BASE, og_type="website", og_title="Haohan Wang's blog",
