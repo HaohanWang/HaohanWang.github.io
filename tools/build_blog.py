@@ -77,6 +77,7 @@ HEAD = """<!DOCTYPE html>
 						<li><a href="../publications.html">Publications</a></li>
 						<li><a href="index.html" class="menu-active">Blog</a></li>
 						<li><a href="../index.html#speaking">Speaking</a></li>
+						<li><a href="../index.html#recognition">Awards &amp; Service</a></li>
 						<li><a href="../index.html#about">About</a></li>
 					</ul>
 				</nav>
@@ -188,6 +189,7 @@ def render_feed(posts):
     <description>{esc(p.get('subtitle', ''))}</description>
   </item>""" for p in posts)
     (OUT / "feed.xml").write_text(f"""<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="feed.xsl"?>
 <rss version="2.0">
 <channel>
   <title>Haohan Wang's blog</title>
