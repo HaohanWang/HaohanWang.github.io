@@ -84,3 +84,8 @@ html { scroll-behavior: smooth; }
 .blog-post p, .blog-post li { font-size: 16px; line-height: 1.75; color: #444; }
 .blog-post blockquote { border-left: 3px solid #8490ff; padding-left: 16px; color: #555; }
 .post-note { font-style: italic; font-size: 13px !important; color: #999 !important; margin-top: 30px; }
+
+.pub-page h1 { font-size: 34px; color: #222; margin-bottom: 8px; }
+.pub-page section h3 { font-size: 20px; color: #222; margin: 34px 0 16px; }
+.pub-page li { font-size: 14px; line-height: 1.65; }
+.pub-page section > p { margin-bottom: 4px; }

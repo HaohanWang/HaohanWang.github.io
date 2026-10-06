@@ -27,7 +27,8 @@ Haohan Wang gives invited talks on agentic AI for biomedical discovery, LLM jail
 - [Visibility in LLM-Based Search](https://haohanwang.ischool.illinois.edu/research/llm-search-visibility.html): how generative engines rank and recommend content; CORE method and ProductBench benchmark
 - [Gene Regulation & Disease Genetics](https://haohanwang.ischool.illinois.edu/research/gene-regulation-disease-genetics.html): spatial gene regulatory networks (SVGRN), Alzheimer's disease genetics (Het-PR), KMM
 - [Blog](https://haohanwang.ischool.illinois.edu/blog/): personal perspectives on AI research (structured vision/SVG, a unified view of trustworthy AI, evaluating prompt-injection defenses)
-- [Publications](https://haohanwang.ischool.illinois.edu/publications.html): publication list by year
+- [Publications](https://haohanwang.ischool.illinois.edu/publications.html): peer-reviewed publications by year
+- [Preprints](https://haohanwang.ischool.illinois.edu/preprints.html): work not yet peer-reviewed
 
 ## Elsewhere
 - DREAM Lab: https://dream.ischool.illinois.edu/ (blog: https://dream.ischool.illinois.edu/blogs.html)
