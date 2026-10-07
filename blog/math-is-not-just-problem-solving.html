@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Math Is Not Just Problem Solving | Haohan Wang</title>
+	<meta name="description" content="AI can now write research-level math proofs. Our new study asks whether models also track the hidden hypotheses that learning math trains us to notice.">
+	<meta name="author" content="Haohan Wang">
+	<link rel="canonical" href="https://haohanwang.ischool.illinois.edu/blog/math-is-not-just-problem-solving.html">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="alternate" type="application/rss+xml" title="Haohan Wang's blog" href="https://haohanwang.ischool.illinois.edu/blog/feed.xml">
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="Haohan Wang">
+	<meta property="og:title" content="Math Is Not Just Problem Solving">
+	<meta property="og:description" content="AI can now write research-level math proofs. Our new study asks whether models also track the hidden hypotheses that learning math trains us to notice.">
+	<meta property="og:url" content="https://haohanwang.ischool.illinois.edu/blog/math-is-not-just-problem-solving.html">
+	<meta property="og:image" content="https://haohanwang.ischool.illinois.edu/img/haohanwang.jpg">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@HaohanWang">
+	<meta name="twitter:creator" content="@HaohanWang">
+	<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "headline": "Math Is Not Just Problem Solving",
+ "description": "AI can now write research-level math proofs. Our new study asks whether models also track the hidden hypotheses that learning math trains us to notice.",
+ "url": "https://haohanwang.ischool.illinois.edu/blog/math-is-not-just-problem-solving.html",
+ "mainEntityOfPage": "https://haohanwang.ischool.illinois.edu/blog/math-is-not-just-problem-solving.html",
+ "datePublished": "2026-10-07T12:00:00-05:00",
+ "dateModified": "2026-10-07T12:00:00-05:00",
+ "author": {
+  "@type": "Person",
+  "@id": "https://haohanwang.ischool.illinois.edu/#person",
+  "name": "Haohan Wang",
+  "url": "https://haohanwang.ischool.illinois.edu/"
+ },
+ "publisher": {
+  "@type": "Person",
+  "@id": "https://haohanwang.ischool.illinois.edu/#person",
+  "name": "Haohan Wang",
+  "url": "https://haohanwang.ischool.illinois.edu/"
+ },
+ "keywords": [
+  "AI for math",
+  "LLM reasoning",
+  "mathematical reasoning",
+  "OpenAI",
+  "evaluation",
+  "personal perspective"
+ ],
+ "wordCount": 1161,
+ "image": "https://haohanwang.ischool.illinois.edu/img/haohanwang.jpg",
+ "inLanguage": "en",
+ "isPartOf": {
+  "@type": "Blog",
+  "@id": "https://haohanwang.ischool.illinois.edu/blog/",
+  "name": "Haohan Wang's blog"
+ }
+}
+	</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/linearicons.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+	<header id="header">
+		<div class="container main-menu">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo"><a href="../" aria-label="Home"></a></div>
+				<nav id="nav-menu-container" aria-label="Main">
+					<ul class="nav-menu">
+						<li><a href="../">Home</a></li>
+						<li><a href="../#research">Research</a></li>
+						<li><a href="../#news">News</a></li>
+						<li><a href="../#talks">Talks</a></li>
+						<li><a href="../publications.html">Publications</a></li>
+						<li><a href="./" class="menu-active">Blog</a></li>
+						<li><a href="../#speaking">Speaking</a></li>
+						<li><a href="../#recognition">Awards &amp; Service</a></li>
+						<li><a href="../#about">About</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main class="topic-page blog-page">
+		<section class="section-gap">
+			<div class="container">
+				<p class="breadcrumb-line"><a href="../">Haohan Wang</a> › <a href="./">Blog</a></p>
+				<article class="blog-post">
+					<h1>Math Is Not Just Problem Solving</h1>
+					<p class="post-subtitle">AI can now write research-level math proofs. Our new study asks whether models also track the hidden hypotheses that learning math trains us to notice.</p>
+					<p class="post-meta">Haohan Wang · <time datetime="2026-10-07">October 7, 2026</time> · AI for math · LLM reasoning · mathematical reasoning · OpenAI · evaluation · personal perspective</p>
+					<p>On October 6, 2026, OpenAI released 722 mathematical manuscripts, grouped into 372 result families, all produced by an unreleased internal model. According to the <a href="https://github.com/openai/math">repository README</a>, the model was given about 4,000 problems, and each published result used about three hours of ChatGPT Pro thinking compute on average. For 162 of the papers, the main result is formalized in Lean. The catalogue includes work on long-standing open problems.</p>
+<p>This is a real milestone. I want to ask a different question: if a machine can solve math problems, has it learned what math is for?</p>
+<p><strong>In short:</strong></p>
+<ul>
+<li>Solving problems is how we practice math. It is not the main reason we learn it.</li>
+<li>Our new paper, <a href="https://arxiv.org/abs/2610.03551">Objects Without Morphisms</a>, finds that seven current language models often lose a hidden hypothesis when they restate a theorem in a more general setting.</li>
+<li>Proof checkers and answer-based benchmarks cannot see this error, so better scores on those tests do not reveal it.</li>
+</ul>
+<h2 id="why-do-we-learn-math-we-will-never-use">Why do we learn math we will never use?</h2>
+<p>Most of us solved many equations in school that we never met again. We did not stop learning math when we could solve the exercise, and we did not stop because the exercise had no use in daily life. The exercises were never the point. They trained a way of thinking: say exactly what you assume, notice when an argument depends on it, and know when a result stops being true.</p>
+<p>Most public measures of AI math ask whether the final answer or proof is correct. That matters, but it measures the exercise, not the habit of thought the exercise was meant to build.</p>
+<h2 id="what-did-openais-math-release-actually-show">What did OpenAI&rsquo;s math release actually show?</h2>
+<p>As far as an outside reader can tell, it shows that a model can produce long, structured arguments that experts take seriously. Abridged reasoning summaries were released for 10 of the 372 families. The one for the Mézard–Parisi formula, for example, follows a single line of thought, not a vote over many guesses. Mathematicians are still checking the results, and OpenAI itself notes that some of the unformalized results &ldquo;could have issues.&rdquo;</p>
+<p>The release does not say how many of the roughly 4,000 problems or attempts failed. That is typical of how progress in AI math is built: many candidates are generated, and an external check, such as a verifier, a proof assistant, or a human judging significance, keeps the ones that pass. This improves the results that survive. It tells us less about what the model has understood.</p>
+<h2 id="can-a-model-keep-track-of-a-hidden-hypothesis">Can a model keep track of a hidden hypothesis?</h2>
+<p>We tested this on a task where no external checker can help: translating a theorem between the &ldquo;dialects&rdquo; of neighboring fields of math. A result about vector spaces can be restated for modules. A probability statement can be restated in measure theory.</p>
+<p>The difficulty is that the original statement often hides one of its hypotheses in its vocabulary. &ldquo;Vector space&rdquo; already means the scalars come from a field, so nobody writes that down. When you restate the result for modules, you must write it down. Otherwise the new statement is about a larger class of objects. For example, the fact that every vector space has a basis becomes false for modules: ℤ/2ℤ is a ℤ-module with no basis.</p>
+<p>Yanli Wang is the first author of this study, with Suijin Wang and Xiaopeng Yuan. We gave the task to seven models from four families. Here is what we found:</p>
+<ul>
+<li>When translating toward the more general setting, models widened the scope of the statement in <strong>60.6%</strong> of rewrites and narrowed it in <strong>none</strong>.</li>
+<li>When translating toward the more specific setting, they narrowed it in <strong>28.3%</strong> and widened it in <strong>0.3%</strong>.</li>
+<li>The pattern held for every model. Scale did not remove it. The most capable model widened least, but still in 46.7% of cases.</li>
+<li>Under a plain prompt, the most capable model stated the needed hypothesis in <strong>8 of 37</strong> rewrites that required it (21.6%). On statements written by mathematicians and taken from ProofWiki, the needed hypothesis was carried over in 4.2% of rewrites.</li>
+<li>Telling the model to state every hypothesis raised that rate to 89.2%, but it also kept hypotheses where they should be dropped. It wrote more without judging better when a hypothesis was needed.</li>
+</ul>
+<p>Simple imprecision would produce errors in both directions. Instead, the output keeps whatever generality the input&rsquo;s wording implies, which looks like a missing step, not noise. In our words, the models have learned a dictionary between the objects of two fields, but not the rule that hypotheses must be carried over along with the objects.</p>
+<h2 id="why-does-this-matter-if-the-proofs-check-out">Why does this matter if the proofs check out?</h2>
+<p>Most of these errors produce statements that are still true, just of a different class of objects. In our data, scope was kept far more often when dropping the hypothesis would make the statement false than when the widened statement stayed true. So the part that survives is the part a truth checker would catch. The quieter error, a statement silently moved to a different setting, passes provers, type checkers, and equivalence-scored benchmarks.</p>
+<p>Keeping track of scope is exactly the thinking math education is meant to build. It also matters in practice, because models are increasingly used to restate and formalize mathematics, and an error no checker sees is the kind that spreads.</p>
+<h2 id="what-i-am-less-sure-about">What I am less sure about</h2>
+<p>Our study does not test OpenAI&rsquo;s internal model. We tested general-purpose models, and math-specialized models may behave differently. The study covers six pairs of fields, some with few items, and our automatic measure undercounts stated hypotheses. Human mathematicians also leave hypotheses implicit, often on purpose.</p>
+<p>There is also a fair counterargument. If a proof is checked in Lean, maybe it does not matter how the model &ldquo;thinks.&rdquo; For a single theorem, I largely agree. My concern is the setting we are moving toward, where models write the statements, the definitions, and the translations that later proofs rely on. There, the questions that matter most are the ones no checker asks.</p>
+<h2 id="what-i-would-ask-for">What I would ask for</h2>
+<p>Celebrate the proofs. Alongside them, measure whether a model can say what a result assumes, notice when a restatement changes its meaning, and know where it stops being true. These are the skills we hope students take from math class. We should ask the same of our models before we call what they do mathematical thinking.</p>
+<p><em>This is a personal perspective. For the full method and results, see the <a href="https://arxiv.org/abs/2610.03551">paper</a>. For OpenAI&rsquo;s release, see the <a href="https://github.com/openai/math">openai/math repository</a>.</em></p>
+					<p class="post-note">This post shares my personal perspective; it does not represent the views of the University of Illinois.</p>
+				</article>
+				<p class="related-line"><a href="./">← All posts</a> · <a href="feed.xml">Subscribe via RSS</a></p>
+			</div>
+		</section>
+	</main>
+	<footer class="footer-area">
+		<div class="container text-center">
+			<p>© 2026 Haohan Wang · School of Information Sciences, University of Illinois Urbana-Champaign · <a href="../">Home</a> · <a href="./">Blog</a> · <a href="feed.xml">RSS</a></p>
+		</div>
+	</footer>
+	<script src="../js/site.js" defer></script>
+</body>
+</html>
