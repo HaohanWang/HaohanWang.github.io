@@ -67,18 +67,18 @@ HEAD = """<!DOCTYPE html>
 	<header id="header">
 		<div class="container main-menu">
 			<div class="row align-items-center justify-content-between d-flex">
-				<div id="logo"><a href="../index.html" aria-label="Home"></a></div>
+				<div id="logo"><a href="../" aria-label="Home"></a></div>
 				<nav id="nav-menu-container" aria-label="Main">
 					<ul class="nav-menu">
-						<li><a href="../index.html">Home</a></li>
-						<li><a href="../index.html#research">Research</a></li>
-						<li><a href="../index.html#news">News</a></li>
-						<li><a href="../index.html#talks">Talks</a></li>
+						<li><a href="../">Home</a></li>
+						<li><a href="../#research">Research</a></li>
+						<li><a href="../#news">News</a></li>
+						<li><a href="../#talks">Talks</a></li>
 						<li><a href="../publications.html">Publications</a></li>
-						<li><a href="index.html" class="menu-active">Blog</a></li>
-						<li><a href="../index.html#speaking">Speaking</a></li>
-						<li><a href="../index.html#recognition">Awards &amp; Service</a></li>
-						<li><a href="../index.html#about">About</a></li>
+						<li><a href="./" class="menu-active">Blog</a></li>
+						<li><a href="../#speaking">Speaking</a></li>
+						<li><a href="../#recognition">Awards &amp; Service</a></li>
+						<li><a href="../#about">About</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -94,7 +94,7 @@ FOOT = """			</div>
 	</main>
 	<footer class="footer-area">
 		<div class="container text-center">
-			<p>© {year} Haohan Wang · School of Information Sciences, University of Illinois Urbana-Champaign · <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · <a href="feed.xml">RSS</a></p>
+			<p>© {year} Haohan Wang · School of Information Sciences, University of Illinois Urbana-Champaign · <a href="../">Home</a> · <a href="./">Blog</a> · <a href="feed.xml">RSS</a></p>
 		</div>
 	</footer>
 	<script src="../js/site.js" defer></script>
@@ -147,7 +147,7 @@ def render_post(p):
                        base=BASE, og_type="article", og_title=esc(p["title"]),
                        ld=json.dumps(ld, ensure_ascii=False, indent=1))
     tags = " · ".join(esc(t) for t in p["tags"])
-    body = f"""				<p class="breadcrumb-line"><a href="../index.html">Haohan Wang</a> › <a href="index.html">Blog</a></p>
+    body = f"""				<p class="breadcrumb-line"><a href="../">Haohan Wang</a> › <a href="./">Blog</a></p>
 				<article class="blog-post">
 					<h1>{esc(p['title'])}</h1>
 					<p class="post-subtitle">{esc(p.get('subtitle', ''))}</p>
@@ -155,7 +155,7 @@ def render_post(p):
 					{p['body']}
 					<p class="post-note">This post shares my personal perspective; it does not represent the views of the University of Illinois.</p>
 				</article>
-				<p class="related-line"><a href="index.html">← All posts</a> · <a href="feed.xml">Subscribe via RSS</a></p>
+				<p class="related-line"><a href="./">← All posts</a> · <a href="feed.xml">Subscribe via RSS</a></p>
 """
     (OUT / f"{p['slug']}.html").write_text(head + body + FOOT.format(year=p["date"].year), encoding="utf-8")
 
@@ -177,7 +177,7 @@ def render_index(posts):
 						<p>{esc(p.get('subtitle', ''))}</p>
 					</li>""" for p in posts) or "\n\t\t\t\t\t<li><p>The first posts are coming soon.</p></li>"
     body = f"""				<h1>Blog</h1>
-				<p class="lead-summary">Personal perspectives on AI research, trustworthy AI, AI for science, and teaching. For research write-ups, see the <a href="../index.html#research">research pages</a> and the <a href="https://dream.ischool.illinois.edu/blogs.html" target="_blank" rel="noopener">DREAM Lab blog</a>.</p>
+				<p class="lead-summary">Personal perspectives on AI research, trustworthy AI, AI for science, and teaching. For research write-ups, see the <a href="../#research">research pages</a> and the <a href="https://dream.ischool.illinois.edu/blogs.html" target="_blank" rel="noopener">DREAM Lab blog</a>.</p>
 				<ul class="post-list">{items}
 				</ul>
 """

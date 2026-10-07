@@ -29,7 +29,7 @@
 		<strong>This is an RSS feed.</strong> To get new posts automatically, copy this address into a feed reader such as Feedly, Inoreader, or NetNewsWire:<br/>
 		<code>https://haohanwang.ischool.illinois.edu/blog/feed.xml</code>
 	</div>
-	<p><a href="index.html">← Back to the blog</a></p>
+	<p><a href="./">← Back to the blog</a></p>
 	<xsl:for-each select="item">
 		<div class="item">
 			<h2><a href="{link}"><xsl:value-of select="title"/></a></h2>
