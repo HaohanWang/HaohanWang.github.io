@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sounding Like You Know | Haohan Wang</title>
+	<meta name="description" content="Frontier models are getting better at sounding right. In biology, where answers are slow to check, that fluency is harder to catch than a plain error.">
+	<meta name="author" content="Haohan Wang">
+	<link rel="canonical" href="https://haohanwang.ischool.illinois.edu/blog/sounding-like-they-know.html">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="alternate" type="application/rss+xml" title="Haohan Wang's blog" href="https://haohanwang.ischool.illinois.edu/blog/feed.xml">
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="Haohan Wang">
+	<meta property="og:title" content="Sounding Like You Know">
+	<meta property="og:description" content="Frontier models are getting better at sounding right. In biology, where answers are slow to check, that fluency is harder to catch than a plain error.">
+	<meta property="og:url" content="https://haohanwang.ischool.illinois.edu/blog/sounding-like-they-know.html">
+	<meta property="og:image" content="https://haohanwang.ischool.illinois.edu/img/haohanwang.jpg">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@HaohanWang">
+	<meta name="twitter:creator" content="@HaohanWang">
+	<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "headline": "Sounding Like You Know",
+ "description": "Frontier models are getting better at sounding right. In biology, where answers are slow to check, that fluency is harder to catch than a plain error.",
+ "url": "https://haohanwang.ischool.illinois.edu/blog/sounding-like-they-know.html",
+ "mainEntityOfPage": "https://haohanwang.ischool.illinois.edu/blog/sounding-like-they-know.html",
+ "datePublished": "2026-10-09T12:00:00-05:00",
+ "dateModified": "2026-10-09T12:00:00-05:00",
+ "author": {
+  "@type": "Person",
+  "@id": "https://haohanwang.ischool.illinois.edu/#person",
+  "name": "Haohan Wang",
+  "url": "https://haohanwang.ischool.illinois.edu/"
+ },
+ "publisher": {
+  "@type": "Person",
+  "@id": "https://haohanwang.ischool.illinois.edu/#person",
+  "name": "Haohan Wang",
+  "url": "https://haohanwang.ischool.illinois.edu/"
+ },
+ "keywords": [
+  "AI for science",
+  "trustworthy AI",
+  "biology",
+  "evaluation",
+  "LLM reasoning",
+  "personal perspective"
+ ],
+ "wordCount": 974,
+ "image": "https://haohanwang.ischool.illinois.edu/img/haohanwang.jpg",
+ "inLanguage": "en",
+ "isPartOf": {
+  "@type": "Blog",
+  "@id": "https://haohanwang.ischool.illinois.edu/blog/",
+  "name": "Haohan Wang's blog"
+ }
+}
+	</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/linearicons.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+	<header id="header">
+		<div class="container main-menu">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo"><a href="../" aria-label="Home"></a></div>
+				<nav id="nav-menu-container" aria-label="Main">
+					<ul class="nav-menu">
+						<li><a href="../">Home</a></li>
+						<li><a href="../#research">Research</a></li>
+						<li><a href="../#news">News</a></li>
+						<li><a href="../#talks">Talks</a></li>
+						<li><a href="../publications.html">Publications</a></li>
+						<li><a href="./" class="menu-active">Blog</a></li>
+						<li><a href="../#speaking">Speaking</a></li>
+						<li><a href="../#recognition">Awards &amp; Service</a></li>
+						<li><a href="../#about">About</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main class="topic-page blog-page">
+		<section class="section-gap">
+			<div class="container">
+				<p class="breadcrumb-line"><a href="../">Haohan Wang</a> › <a href="./">Blog</a></p>
+				<article class="blog-post">
+					<h1>Sounding Like You Know</h1>
+					<p class="post-subtitle">Frontier models are getting better at sounding right. In biology, where answers are slow to check, that fluency is harder to catch than a plain error.</p>
+					<p class="post-meta">Haohan Wang · <time datetime="2026-10-09">October 9, 2026</time> · AI for science · trustworthy AI · biology · evaluation · LLM reasoning · personal perspective</p>
+					<p>Language models are improving fast. One thing they are improving at is sounding like they understand. In some fields that is fine, because a wrong answer gets caught quickly. In biology, it often does not.</p>
+<p><strong>In short:</strong></p>
+<ul>
+<li>A fluent answer and a correct answer are different things. Models are getting better at the first faster than we can check the second.</li>
+<li>In math and code, a checker catches many errors. In open-ended biology, the check is often an experiment that takes months.</li>
+<li>Scientists should treat model output as a hypothesis to test. We also need evaluations that reward a model for saying what it does not know.</li>
+</ul>
+<h2 id="why-is-fluency-a-problem-now">Why is fluency a problem now?</h2>
+<p>A few years ago, a weak answer usually looked weak. It was vague, or it repeated itself, or it contradicted itself two paragraphs later. You could see the gap.</p>
+<p>That signal is fading. A current model can write a clear, well-organized paragraph about a gene, a pathway, or a disease mechanism. It uses the right terms in the right order. It cites the kind of evidence a reviewer expects to see. The paragraph reads like it came from someone who knows the field.</p>
+<p><strong>The problem is that the reading experience no longer tells you much about the content.</strong> Fluency used to be a rough proxy for understanding. As models get better at writing, the proxy breaks. I think of this as a pretense of understanding. I do not mean the model is lying. I mean its writing has the shape of expertise whether or not the reasoning underneath holds.</p>
+<h2 id="why-is-biology-harder-than-math-or-code">Why is biology harder than math or code?</h2>
+<p>In code, you run the tests. In math, a proof assistant like Lean can check a formal proof line by line. These checks are not perfect, but they are fast and they do not care how confident the text sounds.</p>
+<p>Biology has few checks like that. Suppose a model proposes that a variant affects a disease through a particular regulatory element. The claim is plausible. It fits what is known. To find out if it is true, someone has to design an experiment, run it, and wait. That can take months, and a negative result is often unclear.</p>
+<p>So the cost of a fluent wrong answer is not the same across fields. Where checking is cheap, fluency does little harm, because errors surface quickly. Where checking is slow, a convincing wrong idea can absorb real time and money before anyone sees the problem.</p>
+<h2 id="even-checkers-miss-some-errors">Even checkers miss some errors</h2>
+<p>There is a quieter version of this problem that shows up even where checkers exist. In our recent study on translating theorems between fields of math (<a href="https://arxiv.org/abs/2610.03551">Objects Without Morphisms</a>), models often dropped a hidden hypothesis when restating a theorem in a more general setting. Toward the more general setting, they widened the scope of the statement in 60.6% of rewrites. Most of these restated theorems were still true, just about a different class of objects. A truth checker would pass them.</p>
+<p>I bring this up because it shows the pattern in a clean setting. The output read well. Often it was even true. But it had quietly changed what was being claimed. In biology, the same kind of drift is easy to imagine: a finding from one cell type, one population, or one model organism restated as if it holds in general.</p>
+<h2 id="what-i-am-less-sure-about">What I am less sure about</h2>
+<p>There is a fair counterargument. Human experts also sound confident when they are wrong. Grant proposals and discussion sections are full of fluent claims that later fail. Maybe models are just joining a problem science already has, and our existing defenses, such as peer review, replication, and skepticism, will handle it.</p>
+<p>I partly agree. The difference I worry about is volume and cost. A model can produce many plausible hypotheses in the time it takes a person to write one. If each one reads as well as a careful expert&rsquo;s, the bottleneck moves to checking. Our checking capacity in biology has not grown at the same rate.</p>
+<p>I am also not sure how to measure &ldquo;sounding like you know&rdquo; well. Calibration scores help, but a model can be well calibrated on average and still be confidently wrong on the questions that matter most for a given study.</p>
+<h2 id="what-should-scientists-do">What should scientists do?</h2>
+<p>A few habits seem worth keeping, for my own group and for others.</p>
+<p><strong>Treat model output as a hypothesis, not a finding.</strong> This sounds obvious, but fluent text makes it easy to forget. Before acting on a suggestion, ask what experiment would show it is wrong, and how long that would take.</p>
+<p><strong>Ask the model what it is unsure of, and check whether that answer is useful.</strong> A model that can point to the weak step in its own reasoning is more helpful than one that writes a smoother paragraph.</p>
+<p><strong>Build evaluations that reward honest uncertainty.</strong> Most current benchmarks score whether an answer is right. Few score whether a model knows when it does not know, or whether it states the assumptions its answer depends on. In open-ended science, those may matter more than accuracy on questions with known answers.</p>
+<p>None of this means we should stop using these models in biology. They are useful tools. It means the skill we need is shifting. Reading a fluent answer and asking whether it is true was always part of science. It is becoming the main part.</p>
+<p><em>This is a personal perspective. For the math study mentioned above, see the <a href="https://arxiv.org/abs/2610.03551">paper</a> and my <a href="math-is-not-just-problem-solving.html">earlier post</a>.</em></p>
+					<p class="post-note">This post shares my personal perspective; it does not represent the views of the University of Illinois.</p>
+				</article>
+				<p class="related-line"><a href="./">← All posts</a> · <a href="feed.xml">Subscribe via RSS</a></p>
+			</div>
+		</section>
+	</main>
+	<footer class="footer-area">
+		<div class="container text-center">
+			<p>© 2026 Haohan Wang · School of Information Sciences, University of Illinois Urbana-Champaign · <a href="../">Home</a> · <a href="./">Blog</a> · <a href="feed.xml">RSS</a></p>
+		</div>
+	</footer>
+	<script src="../js/site.js" defer></script>
+</body>
+</html>
