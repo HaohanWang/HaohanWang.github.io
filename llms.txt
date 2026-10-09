@@ -20,6 +20,21 @@
 ## Speaking and collaboration
 Haohan Wang is available to give keynotes, invited talks, seminars, tutorials, and panel discussions (in person or virtual) for academic, industry, and policy audiences; to invite him, email haohanw@illinois.edu. He has given nearly 50 invited talks and tutorials on agentic AI for biomedical discovery, LLM jailbreaks and prompt-injection defense, spatial gene regulation and disease genetics, and trustworthy machine learning. Past hosts include NIH/NLM, NIH NIDA, the NAIRR Pilot, Stanford, Tsinghua University, EMBL-EBI, the Broad Institute, Capital One, and KDD (tutorial). He welcomes collaborations in three areas: agentic AI (multi-agent architectures, efficient test-time scaling, AI scientists for discovery), trustworthy and secure AI (jailbreaks and red teaming, prompt-injection defense, ranking and visibility in LLM-based search), and computational biology (agentic analysis of thousands of diseases, spatial and single-cell gene regulation, shared genetic architecture of Alzheimer's disease, autism, and other complex diseases). Contact: haohanw@illinois.edu.
 
+## Selected recent invited talks
+- Apr 2026 — Security is Task Dependent: The Security–Fidelity Tradeoff in Prompt Injection Defense — Amazon-Illinois Center on AI for Interactive Conversational Experiences (AICE), UIUC
+- Mar 2026 — Agentic AI for Genomic Science: Understanding the Mechanism of Thousands of Diseases at One Time — Computational Microbiome Lecture Series, University of Oklahoma (also William & Mary, Nov 2025)
+- Dec 2025 — Practical Concerns of Prompt Injection in Deployed Language Models — Capital One
+- Nov 2025 — Large Language Model-based Data Science Agent — ResearchTrend.AI
+- Aug 2025 — Toward Agentic AI Scientist for Biomedical Discovery — Tsinghua University (also UIUC CIRSS Speaker Series and Australian National University, 2025)
+- Mar 2025 — Spatially Varying Cell-specific Gene Regulation Network Inference — NIH Common Fund Data Ecosystem (CFDE) Meeting
+- Feb 2025 — GenoAgent: LLM-Based Exploration of Gene Expression Data in Alignment with Bioinformaticians — NAIRR Pilot, Washington, D.C.
+- July 2024 — Towards LLM-Based Exploration of Gene Expression Data in Alignment with Bioinformaticians — NIH/NLM
+- June 2024 — Understanding Variations in Regulatory Networks Across Cell Types — NIDA, NIH
+- Apr 2024 — A Team of AI-made Scientists from LLMs for Scientific Discovery from Transcriptomics — EMBL-EBI Workshop
+- 2024 — Guardian of Trust in Language Models: Automatic Jailbreak and Systematic Defense — Virginia Tech, University of Illinois Chicago, VALSE, and others
+- Dec 2023 — Understanding Structural Patterns for Early-Diagnosis of Alzheimer's Disease — Stanford AI+Health Seminar
+- Full list (nearly 50 talks): https://haohanwang.ischool.illinois.edu/#talks
+
 ## Pages
 - [Homepage](https://haohanwang.ischool.illinois.edu/): bio, research, news, invited talks, awards, teaching, service
 - [Agentic AI for Genomics](https://haohanwang.ischool.illinois.edu/research/agentic-ai-genomics.html): LLM agents as virtual bioinformaticians (GenoMAS, GenoTEX), key results, talks
