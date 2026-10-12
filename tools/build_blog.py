@@ -121,6 +121,14 @@ def load_posts():
         meta["date"] = dt.date.fromisoformat(date)
         meta["slug"] = meta.get("slug") or re.sub(r"^\d+-", "", path.stem)
         meta["tags"] = meta.get("tags") or []
+        # Deduplicate sources (e.g. an arXiv abs page and its PDF) while keeping order.
+        seen, srcs = set(), []
+        for u in meta.get("sources") or []:
+            key = re.sub(r"/pdf/", "/abs/", str(u)).rstrip("/")
+            if key not in seen:
+                seen.add(key)
+                srcs.append(str(u))
+        meta["sources"] = srcs
         # The page template already shows the title and subtitle, so drop a leading
         # "# Title" line and an italic subtitle line if the Markdown repeats them.
         body_md = re.sub(r"^\s*#\s+[^\n]*\n+(\*[^\n]*\*\s*\n+)?", "", m.group(2), count=1)
@@ -140,19 +148,23 @@ def render_post(p):
     ld = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": p["title"],
           "description": p.get("subtitle", ""), "url": url, "mainEntityOfPage": url,
           "datePublished": iso_dt(p["date"]), "dateModified": iso_dt(p["date"]),
-          "author": PERSON, "publisher": PERSON, "keywords": p["tags"], "wordCount": p["words"],
+          "author": PERSON, "publisher": PERSON, "keywords": p["tags"], "wordCount": p["words"], "citation": p["sources"],
           "image": BASE + "img/haohanwang.jpg", "inLanguage": "en",
           "isPartOf": {"@type": "Blog", "@id": BASE + "blog/", "name": "Haohan Wang's blog"}}
     head = HEAD.format(title=esc(f"{p['title']} | Haohan Wang"), desc=esc(p.get("subtitle", "")), url=url,
                        base=BASE, og_type="article", og_title=esc(p["title"]),
                        ld=json.dumps(ld, ensure_ascii=False, indent=1))
     tags = " · ".join(esc(t) for t in p["tags"])
+    sources_html = ("<h2>Sources and further reading</h2>\n\t\t\t\t\t<ol class=\"post-sources\">"
+                    + "".join(f'<li><a href="{esc(u)}" target="_blank" rel="noopener">{esc(u)}</a></li>' for u in p["sources"])
+                    + "</ol>") if p["sources"] else ""
     body = f"""				<p class="breadcrumb-line"><a href="../">Haohan Wang</a> › <a href="./">Blog</a></p>
 				<article class="blog-post">
 					<h1>{esc(p['title'])}</h1>
 					<p class="post-subtitle">{esc(p.get('subtitle', ''))}</p>
 					<p class="post-meta">Haohan Wang · <time datetime="{p['date'].isoformat()}">{p['date'].strftime('%B %-d, %Y')}</time>{(' · ' + tags) if tags else ''}</p>
 					{p['body']}
+					{sources_html}
 					<p class="post-note">This post shares my personal perspective; it does not represent the views of the University of Illinois.</p>
 				</article>
 				<p class="related-line"><a href="./">← All posts</a> · <a href="feed.xml">Subscribe via RSS</a></p>

@@ -89,3 +89,4 @@ html { scroll-behavior: smooth; }
 .pub-page section h3 { font-size: 20px; color: #222; margin: 34px 0 16px; }
 .pub-page li { font-size: 14px; line-height: 1.65; }
 .pub-page section > p { margin-bottom: 4px; }
+.post-sources li { font-size: 13px !important; word-break: break-all; }
