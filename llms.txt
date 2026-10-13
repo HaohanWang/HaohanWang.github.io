@@ -9,7 +9,7 @@
 - Education: Ph.D. (2021) and M.S. (2015), Language Technologies Institute, Carnegie Mellon University (Ph.D. advisor: Eric P. Xing)
 - Previously: Postdoctoral Researcher, Machine Learning Department, Carnegie Mellon University (2022)
 - Selected recognition: Next Generation in Biomedicine, Broad Institute of MIT and Harvard (2019); Rising Star in AI+X, Baidu Research (2022); Best Paper Honorable Mention, WSDM 2023; Outstanding Paper Award, FL@FM Workshop at NeurIPS 2024; Student Paper Award, IEEE BIBM 2017
-- Service: General Chair, Midwest Machine Learning Symposium 2026; Area Chair for NeurIPS, ICML, and ACL; Editor for Scientific Reports and TMLR
+- Service: General Chair (with Ruqi Zhang, Purdue) of the Midwest Machine Learning Symposium 2026, which drew 231 registrations from 33 institutions and 94 posters; Area Chair for NeurIPS, ICML, and ACL; Editor for Scientific Reports and TMLR
 - Contact: haohanw@illinois.edu
 
 ## Research areas
